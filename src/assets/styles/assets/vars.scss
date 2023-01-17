@@ -1,25 +1,18 @@
-$default-font: 'gilroy', sans-serif;
+$default-font: 'Futura PT', sans-serif;
 $default-font2: 'montser', sans-serif;
 
-$mc1: #283013;
-$mc2: #8cb90c;
-$textGrey: #676863;
-$textLight: #9a9f8c;
+$mc1: #2A2C65;
+$mc2: #EBEBF2;
+$textGrey: #B4C4D5;
+$textLightGrey: #E8E9E9;
+$textGreySpecial: #939598;
 $wc: #fff;
-$bc: #000;
+$bc: #081019;
 $bc2: #0e0e0e;
-$bTitle: #181818;
-$adCol: #cecece;
-$lightGrey: #e0e0e0;
-$grey: #363636;
-$grey2: #676863;
-$greyBg: #f0f0f0;
+
 
 
 $mc: #1a2941;
-$bg: #fafafa;
-$light: #fcfcfc;
-$dark: #1a2941;
 
 $xs: 767px;
 $sm: 1366px;
@@ -55,26 +48,25 @@ $md: 1920px;
 
 :root {
   --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
-  --header-h: 80px;
-  --logo-w: 160px;
+  --header-h: 60px;
+  --logo-w: 164px;
   --sliceFigure: 239px;
   --sliceFigure-big: 541px;
 
   @include tabletLarge {
-    --header-h: 70px;
-    --logo-w: 120px;
     --sliceFigure-big: 362px;
   }
 
   @include tablet {
     --header-h: 90px;
-    --logo-w: 90px;
+    --logo-w: 148px;
     --sliceFigure-big: 44px;
 
   }
 
   @include mobile {
-    --header-h: 60px;
+    --header-h: 66px;
+    --logo-w: 105 px;
     --sliceFigure: 100px;
     --sliceFigure-big: 100px;
   }

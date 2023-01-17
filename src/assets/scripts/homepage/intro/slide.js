@@ -5,6 +5,5 @@ export class Slide {
         this.DOM.img = this.DOM.imgWrap.querySelector('.slide__img');
         this.DOM.headline = this.DOM.el.querySelector('.slides__caption-headline');
         this.DOM.text = this.DOM.headline.querySelectorAll('.text-row > span');
-        this.DOM.link = this.DOM.el.querySelector('.slides__caption-link');
     }
 }

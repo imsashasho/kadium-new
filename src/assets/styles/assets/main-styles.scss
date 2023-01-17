@@ -19,3 +19,95 @@ button {
   border: none;
   background-color: inherit;
 }
+
+.btn {
+  text-decoration: none;
+  outline: none; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  height: 60px;
+  background: #2A2C65;
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: #E8E9E9;
+  @include tabletLarge {
+    width: 184px;
+    height: 50px;
+    font-size: 14px;
+
+  }
+
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+.btn
+:focus {
+	/* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+	outline: none;
+	background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+	/* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+	background: transparent;
+}
+
+a:focus-visible {
+	/* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+	outline: 2px solid $mc1;
+	background: transparent;
+}
+
+.text {
+  &-title {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 36px;
+    }
+  }
+
+  &-descr{
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+
+    @include tabletLarge {
+      font-size: 20px;
+    }
+
+  }
+
+  &-descr-uppercase {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+
+    @include tabletLarge {
+      font-size: 20px;
+    }
+  }
+}

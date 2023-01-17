@@ -1,55 +1,45 @@
 section.intro 
     .intro-wrap 
         .intro-nav.frame
+            a(href="#").slides__caption-link.text-descr
+                .slides__caption-link-btn 
+                    +svg('arrow')
+                span Гортай далі
             nav.slides-nav
-                button.slides-nav__button.slides-nav__button--prev(aria-label="Previous slide") 
-                    <svg>
-                        <path d="M1.176 11.532a.5.5 0 00-.352.936c5.228 1.96 9.475 5.555 12.752 10.797a.5.5 0 00.848-.53c-3.39-5.424-7.81-9.163-13.248-11.203z"/>
-                        <path d="M1.176 12.468a.5.5 0 01-.352-.936C6.052 9.572 10.3 5.978 13.576.735a.5.5 0 01.848.53c-3.39 5.424-7.81 9.163-13.248 11.203z"/>
-                        <path d="M1 12.5a.5.5 0 110-1h53a.5.5 0 110 1H1z"/>
-                    </svg>    
-                button.slides-nav__button.slides-nav__button--next(aria-label="Next slide")
-                    <svg>
-                        <path d="M53.824 11.532a.5.5 0 01.352.936c-5.228 1.96-9.475 5.555-12.752 10.797a.5.5 0 01-.848-.53c3.39-5.424 7.81-9.163 13.248-11.203z"/>
-                        <path d="M53.824 12.468a.5.5 0 00.352-.936C48.948 9.572 44.7 5.978 41.424.735a.5.5 0 00-.848.53c3.39 5.424 7.81 9.163 13.248 11.203z"/>
-                        <path d="M54 12.5a.5.5 0 100-1H1a.5.5 0 100 1h53z"/>
-                    </svg>
                 .slides-nav__index
-                    span.slides-nav__index-current
-                        span 1
-                    span.slides-nav__index-total 5  
-
+                        span.slides-nav__index-current.text-descr
+                            span 1
+                        span.slides-nav__index-total.text-descr 5
+                button.slides-nav__button.slides-nav__button--prev(aria-label="Previous slide") 
+                    +svg('arrow')   
+                button.slides-nav__button.slides-nav__button--next(aria-label="Next slide")
+                    +svg('arrow')
         .slideshow
             figure.slide.slide--current
                 .slide__img-wrap
                     .slide__img(style="background-image: url(assets/images/intro/1.jpg)")
                 figcaption.slide__caption
                     h2.slides__caption-headline
-                        span.text-row
+                        span.text-row.text-title
                             span Каdium — будуємо майбутнє
-                        span.text-row
+                        span.text-row.text-descr
                             span Для тих, хто обирає життя в центрі подій, легкість пересування, нові технології та подорожі. 
-                    a.slides__caption-link
-                        span Гортай
             figure.slide
                 .slide__img-wrap
                     .slide__img(style="background-image: url(assets/images/intro/2.jpg)")
                 figcaption.slide__caption
                     h2.slides__caption-headline
-                        span.text-row
+                        span.text-row.text-title
                             span Каdium — будуємо майбутнє
-                        span.text-row
+                        span.text-row.text-descr
                             span Для тих, хто обирає життя в центрі подій, легкість пересування, нові технології та подорожі.
-                    a.slides__caption-link
-                        span Гортай
             figure.slide
                 .slide__img-wrap
                     .slide__img(style="background-image: url(assets/images/intro/3.jpg)")
                 figcaption.slide__caption
                     h2.slides__caption-headline
-                        span.text-row
+                        span.text-row.text-title
                             span tttt
-                        span.text-row
+                        span.text-row.text-descr
                             span iiii 
-                    a.slides__caption-link
-                        span Гортай
+                    

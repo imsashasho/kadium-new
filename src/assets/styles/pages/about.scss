@@ -1,0 +1,65 @@
+.about {
+    &-wrap {
+        background: $mc2;
+        display: flex;
+        justify-content: space-between;
+        width: fit-content;
+
+    }
+    &-intro {
+        width: 50%;
+        padding: 150px 150px 150px 80px;
+        padding-left: 80px;
+        padding-right: 150px;
+
+    }
+
+    &-intro-title {
+        margin-bottom: 20px;
+        color: $bc;
+
+    }
+
+    &-intro-descr {
+        margin-bottom: 40px;
+        color: $textGreySpecial;
+
+    }
+
+    &-numbers-list {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+
+    }
+    &-numbers {
+        width: 50%;
+        padding: 150px 80px 150px 150px;
+        background-image: url('/src/assets/images/about/noise.png');
+    }
+    &-numbers-card {
+        width: 50%;
+        margin-bottom: 60px;
+
+        &:nth-last-child(-n+2) {
+            margin-bottom: 0;
+        }
+
+    }
+    &-numbers-card__text {
+
+    }
+    &-numbers-card__text-title {
+        color: $mc1;
+
+    }
+    &-numbers-card__text-sub {
+        color: $mc1;
+    }
+    &-numbers-card__descr{
+        color: $textGreySpecial;
+
+    }
+   
+}

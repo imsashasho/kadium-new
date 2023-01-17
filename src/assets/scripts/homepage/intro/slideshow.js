@@ -33,24 +33,24 @@ export class Slideshow extends EventEmitter {
     // set the initial clip path
     gsap.set(this.slides[this.current].DOM.imgWrap, { clipPath: this.config.clipPath.initial });
     // when hovering over the "explore" link on each slide, we animate the clip path from this.config.clipPath.initial to this.config.clipPath.hover
-    for (const slide of this.slides) {
-      slide.DOM.link.addEventListener('mouseenter', () => {
-        gsap.killTweensOf(slide.DOM.imgWrap);
-        gsap.to(slide.DOM.imgWrap, {
-          duration: 1,
-          ease: 'expo',
-          clipPath: this.config.clipPath.hover,
-        });
-      });
-      slide.DOM.link.addEventListener('mouseleave', () => {
-        gsap.killTweensOf(slide.DOM.imgWrap);
-        gsap.to(slide.DOM.imgWrap, {
-          duration: 1,
-          ease: 'expo',
-          clipPath: this.config.clipPath.initial,
-        });
-      });
-    }
+    // for (const slide of this.slides) {
+    //   slide.DOM.link.addEventListener('mouseenter', () => {
+    //     gsap.killTweensOf(slide.DOM.imgWrap);
+    //     gsap.to(slide.DOM.imgWrap, {
+    //       duration: 1,
+    //       ease: 'expo',
+    //       clipPath: this.config.clipPath.hover,
+    //     });
+    //   });
+    //   slide.DOM.link.addEventListener('mouseleave', () => {
+    //     gsap.killTweensOf(slide.DOM.imgWrap);
+    //     gsap.to(slide.DOM.imgWrap, {
+    //       duration: 1,
+    //       ease: 'expo',
+    //       clipPath: this.config.clipPath.initial,
+    //     });
+    //   });
+    // }
   }
   // navigate to the next slide
   next() {
@@ -104,7 +104,7 @@ export class Slideshow extends EventEmitter {
       // same for the texts and link elements
       .set(upcomingSlide.DOM.img, { y: direction === 'next' ? '-50%' : '50%' }, 'start')
       .set(upcomingSlide.DOM.text, { y: direction === 'next' ? '100%' : '-100%' }, 'start')
-      .set(upcomingSlide.DOM.link, { opacity: 0 }, 'start')
+      // .set(upcomingSlide.DOM.link, { opacity: 0 }, 'start')
       // animate the clip path from this.config.clipPath.initial to this.config.clipPath.final
       .to(
         currentSlide.DOM.imgWrap,
@@ -127,15 +127,15 @@ export class Slideshow extends EventEmitter {
         'start',
       )
       // animate the current slide link out
-      .to(
-        currentSlide.DOM.link,
-        {
-          duration: 0.5,
-          ease: 'power3',
-          opacity: 0,
-        },
-        'start',
-      )
+      // .to(
+      //   currentSlide.DOM.link,
+      //   {
+      //     duration: 0.5,
+      //     ease: 'power3',
+      //     opacity: 0,
+      //   },
+      //   'start',
+      // )
       // move the current slide away
       .to(
         currentSlide.DOM.imgWrap,
@@ -199,15 +199,15 @@ export class Slideshow extends EventEmitter {
         'start+=1.1',
       )
       // animate the upcoming slide link in
-      .to(
-        upcomingSlide.DOM.link,
-        {
-          duration: 1,
-          ease: 'expo.in',
-          opacity: 1,
-        },
-        'start+=1.4',
-      );
+      // .to(
+      //   upcomingSlide.DOM.link,
+      //   {
+      //     duration: 1,
+      //     ease: 'expo.in',
+      //     opacity: 1,
+      //   },
+      //   'start+=1.4',
+      // );
 
     // update the slideshow current value
     this.emit('updateCurrent', this.current);
