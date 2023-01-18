@@ -1,7 +1,7 @@
 
 extends ../layout/main
 block meta
-  title= 'Головна'
+  title= 'Новини'
   meta(name='description', content='')
 block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
@@ -19,11 +19,8 @@ block header
   include ../includes/header.pug
   include ../includes/menu.pug
 block content
-  include ../includes/homepage/intro.pug
-  include ../includes/homepage/about.pug
-  include ../includes/homepage/projects.pug
-  include ../includes/homepage/news.pug
-  include ../includes/homepage/contacts.pug
+  include ../includes/news/main.pug
+  
   
   
 

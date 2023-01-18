@@ -5,3 +5,4 @@
 // import './animation';
 import './intro/index';
 import './projects';
+import './news';

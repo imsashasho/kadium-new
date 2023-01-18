@@ -9,13 +9,14 @@
     lazy: true,
     watchSlidesVisibility: true,
     speed: 1600,
+
     breakpoints: {
       1400: {
         spaceBetween: 10,
         autoHeight: true,
         slidesPerView: 3,
         centeredSlides: true,
-        loop: false,
+        loop: true,
       },
       768: {
         spaceBetween: 50,
