@@ -1,24 +1,24 @@
 {
   const donationBtns = document.querySelectorAll('.donation-card__title');
 
-  donationBtns.forEach(accordion => {
+  donationBtns.forEach((accordion) => {
     accordion.addEventListener('click', () => {
       accordion.classList.toggle('is-active');
 
-      let content = accordion.nextElementSibling;
+      const content = accordion.nextElementSibling;
 
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
       } else {
-        content.style.maxHeight = content.scrollHeight + 'px';
+        content.style.maxHeight = `${content.scrollHeight}px`;
       }
     });
   });
 
   const requaritiesRef = document.querySelectorAll('.donation-card__details-text-container');
 
-  requaritiesRef.forEach(item => {
-    item.addEventListener('click', async event => {
+  requaritiesRef.forEach((item) => {
+    item.addEventListener('click', async (event) => {
       if (!navigator.clipboard) {
         // Clipboard API is not available
         return;
@@ -45,23 +45,15 @@
     mobile: 1,
   };
 
-  const isDesktop = windowWith => {
-    return windowWith > breakpoints.desktop;
-  };
+  const isDesktop = windowWith => windowWith > breakpoints.desktop;
 
-  const isTabletLarge = windowWith => {
-    return windowWith >= breakpoints.tabletLarge && windowWith <= breakpoints.desktop;
-  };
+  const isTabletLarge = windowWith => windowWith >= breakpoints.tabletLarge && windowWith <= breakpoints.desktop;
 
-  const isTablet = windowWith => {
-    return windowWith >= breakpoints.mobile && windowWith <= breakpoints.tabletLarge;
-  };
+  const isTablet = windowWith => windowWith >= breakpoints.mobile && windowWith <= breakpoints.tabletLarge;
 
-  const isMobile = windowWith => {
-    return windowWith < breakpoints.mobile;
-  };
+  const isMobile = windowWith => windowWith < breakpoints.mobile;
 
-  const getItemsInRow = windowWith => {
+  const getItemsInRow = (windowWith) => {
     if (isDesktop(windowWith)) return itemsInRow.desktop;
     if (isTablet(windowWith)) return itemsInRow.tabletLarge;
     if (isTabletLarge(windowWith)) return itemsInRow.tablet;
@@ -73,7 +65,7 @@
   const cardRef = document.querySelectorAll('.donation-card');
   const listLenght = cardRef.length;
 
-  const getAdditionalItems = itemsLength => {
+  const getAdditionalItems = (itemsLength) => {
     const windowWith = window.innerWidth;
     const itemsInRow = getItemsInRow(windowWith);
     const itemsLeft = itemsLength % itemsInRow;
@@ -89,11 +81,11 @@
 
   const createFrom = Array.apply(null, { length: newArrayLenght }).map(Number.call, Number);
 
-  createFrom.forEach(e => {
+  createFrom.forEach((e) => {
     e = document.createElement('div');
     e.className = 'donation-card donation-card--empty';
-    e.innerHTML +=
-      '<img class="donation-card--empty__img" src="https://hatinka-wp.smarto.com.ua/wp-content/themes/hatinka/assets/images/coat-of-arms.png" alt="">';
+    e.innerHTML
+      += '<img class="donation-card--empty__img" src="https://hatinka-wp.smarto.com.ua/wp-content/themes/hatinka/assets/images/coat-of-arms.png" alt="">';
     const cardListRef = document.querySelector('.donation-list');
     cardListRef.append(e);
   });

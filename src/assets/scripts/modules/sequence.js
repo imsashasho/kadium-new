@@ -34,7 +34,7 @@ export default function fake3d(
 
   const loadedCounter = 0;
   /** Флаг блокировки при играющей анимации */
-  let isAnimating = false;
+  const isAnimating = false;
   window.currentDisplayedImage = 0;
   let currentDisplayedImage = 0;
 
@@ -59,7 +59,7 @@ export default function fake3d(
 
   fetch(path)
     .then(el => el.json())
-    .then(el => {
+    .then((el) => {
       el.forEach(img => array.push(img));
       container.querySelector(':first-child').style.opacity = 0;
       container.style.background = 'none';
@@ -100,9 +100,9 @@ export default function fake3d(
     //   return;
     // }
     if (
-      currentDisplayedImage !== posInPercent &&
-      array[posInPercent] !== undefined &&
-      isAnimating === false
+      currentDisplayedImage !== posInPercent
+      && array[posInPercent] !== undefined
+      && isAnimating === false
     ) {
       containerToAdd.src = array[posInPercent];
       currentDisplayedImage = posInPercent;

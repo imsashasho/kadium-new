@@ -1,0 +1,75 @@
+.contact {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/contact/bg.jpg);
+    &-wrap {
+        padding: 150px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &-intro {
+        width: 50%;
+    }
+    &-intro__title {
+        text-decoration-line: underline;
+        color: $textLightGrey;
+        width: 35%;
+
+
+    }
+    &-main {
+        width: 50%;
+
+    }
+    &-socials {
+
+    }
+    &-socials-list {
+        padding: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        background: rgba(8, 16, 25, 0.9);
+
+
+    }
+    &-socials-card {
+        width: 50%;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+
+        &:nth-last-child(-n+2) {
+            margin-bottom: 0;
+        }
+
+    }
+    &-socials-card__title {
+        margin-bottom: 8px;
+
+    }
+    &-socials-card__descr {
+        margin-bottom: 8px;
+
+    }
+    &-socials-card__link {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 120%;
+        text-decoration-line: underline;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+    }
+    &-socials-card__link--simple {
+        color: $textGrey;
+        margin-bottom: 8px;
+
+        &:nth-last-of-type(-n+1) {
+            margin-bottom: 0;
+        }
+    }
+}

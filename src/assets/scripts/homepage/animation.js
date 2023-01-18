@@ -33,7 +33,7 @@ gsap.registerPlugin(ScrollTrigger);
   //     });
   //   });
 
-  animationItemSelectors.forEach(selector => {
+  animationItemSelectors.forEach((selector) => {
     intersectionObserver(selector, () => {
       splitToLinesAndFadeUp(selector);
     });
@@ -74,7 +74,7 @@ gsap.registerPlugin(ScrollTrigger);
   function clipPathEntry(selector, scroller, effectConfig = {}, gsap, cb = () => {}) {
     const startClip = 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)';
     const endClip = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)';
-    document.querySelectorAll(selector).forEach(text => {
+    document.querySelectorAll(selector).forEach((text) => {
       const tl = gsap
         .timeline({
           // paused: true,
@@ -117,7 +117,7 @@ gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.batch('.general-card-container', {
       start: 'top 90%',
       end: 'bottom 5%',
-      onEnter: batch => {
+      onEnter: (batch) => {
         batch.forEach((card, index) => {
           const generalCard1 = card.querySelectorAll('.general-card--small');
           const generalCard2 = card.querySelectorAll('.general-card--large');
@@ -161,7 +161,7 @@ gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.batch('.card-list', {
       start: 'top 80%',
       end: 'bottom 10%',
-      onEnter: batch => {
+      onEnter: (batch) => {
         batch.forEach((card, index) => {
           const listCard = card.querySelectorAll('.card-list__item');
           const chart_tl = gsap.timeline();
@@ -197,7 +197,7 @@ gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.batch('.numbers-row', {
       start: 'top 80%',
       end: 'bottom 10%',
-      onEnter: batch => {
+      onEnter: (batch) => {
         batch.forEach((card, index) => {
           // const img = card.querySelectorAll('.conditions-card-img');
           const container1 = card.querySelectorAll('.numbers-card--large');
@@ -242,7 +242,7 @@ gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.batch('.gallery-slider__wrp', {
       start: 'top 80%',
       end: 'bottom 10%',
-      onEnter: batch => {
+      onEnter: (batch) => {
         batch.forEach((card, index) => {
           const listCard = card.querySelectorAll('.gallery-slider__item');
           const chart_tl = gsap.timeline();
@@ -273,7 +273,7 @@ gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.batch('.documents-list', {
       start: 'top 80%',
       end: 'bottom 10%',
-      onEnter: batch => {
+      onEnter: (batch) => {
         batch.forEach((card, index) => {
           // const img = card.querySelectorAll('.conditions-card-img');
           const documentCard = card.querySelectorAll('.documents-card');
@@ -305,7 +305,7 @@ gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.batch('.questions-list', {
       start: 'top 80%',
       end: 'bottom 10%',
-      onEnter: batch => {
+      onEnter: (batch) => {
         batch.forEach((card, index) => {
           const documentCard = card.querySelectorAll('.questions-card');
           const chart_tl = gsap.timeline();

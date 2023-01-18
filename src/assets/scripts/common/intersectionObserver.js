@@ -4,7 +4,7 @@ const options = {
 };
 
 export const intersectionObserver = (selector, onIntersect) => {
-  const handleIntersection = entries => {
+  const handleIntersection = (entries) => {
     const { isIntersecting } = entries[0];
 
     if (isIntersecting) {

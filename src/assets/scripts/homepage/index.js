@@ -4,3 +4,4 @@
 // import './accordion';
 // import './animation';
 import './intro/index';
+import './projects';
