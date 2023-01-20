@@ -1,159 +1,193 @@
+import { fadeUpLines, splitToLines } from '../modules/effects/animationHelpers';
+import { paralax } from '../common/paralax';
+import gsap from 'gsap';
 
-  import { fadeUpLines, splitToLines } from '../modules/effects/animationHelpers'
+let prevIndex = 0;
+const swiper1 = new Swiper('.news-gallery-swiper', {
+  grabCursor: true,
+  loop: true,
+  keyboard: true,
+  spaceBetween: 10,
+  // initialSlide: 0,
+  preloadImages: false,
+  lazy: true,
+  height: 600,
+  centeredSlides: false,
+  watchSlidesVisibility: true,
+  allowTouchMove: false,
+  speed: 1600,
+  on: {
+    init: e => {
+      let { slides } = e;
+      slides = slides.filter(el => !el.classList.contains('swiper-slide-duplicate'));
+      document.querySelector('.news .news-slides-nav__index-total').textContent = slides.length;
+    },
+    beforeTransitionStart: e => {
+      // console.log(e);
+      // console.log(prevIndex, e.realIndex);
+      // console.log((prevIndex < e.realIndex) ? 'next' : 'prev');
+      // const direction = e.touches.startX > e.touches.currentX ? 'forward' : 'backward';
+      // console.log(direction);
+      // // debugger
+      // const item = document.querySelector('.advantages-slider .swiper-slide-prev img');
+      // item.style.transition = '.1s ease-out';
+      // item.style.opacity = 0;
+      // setTimeout(() => {
+      //   item.style.opacity = 1;
+      // }, 1000);
+      // prevIndex = e.realIndex;
+    },
+    activeIndexChange: e => {
+      // console.log(e);
+      document.querySelector('.news-slides-nav__index-current').textContent = e.realIndex + 1;
+    },
+  },
+  breakpoints: {
+    1400: {
+      autoHeight: true,
+      slidesPerView: 1.75,
+    },
+    768: {
+      initialSlide: 1,
+      autoHeight: true,
+      slidesPerView: 1.75,
+      centeredSlides: false,
+    },
+    360: {
+      spaceBetween: 0,
+      slidesPerView: 1,
+      autoHeight: true,
+      centeredSlides: false,
+    },
+  },
+  simulateTouch: true,
+  navigation: {
+    nextEl: '.news-swiper-button-next',
+    prevEl: '.news-swiper-button-prev',
+  },
+  pagination: {
+    el: '.news-gallery__pagination',
+    clickable: true,
+    type: 'progressbar',
+  },
+});
+document.querySelector('.news-swiper-button-next').addEventListener('click', function(evt) {
+  const item = document.querySelector('.news-gallery-swiper .swiper-slide-prev img');
+  item.style.transition = '.1s ease-out';
+  item.style.opacity = 0;
+  setTimeout(() => {
+    item.style.opacity = '';
+  }, 1000);
+});
+document.querySelector('.news-swiper-button-prev').addEventListener('click', function(evt) {
+  const item = document.querySelector('.news-gallery-swiper .swiper-slide-active img');
+  console.log(item);
+  item.style.transition = '.3s ease-out';
+  item.style.opacity = 0;
+  setTimeout(() => {
+    item.style.opacity = '';
+  }, 1000);
+});
+const swiper2 = new Swiper('.news-intro-swiper', {
+  grabCursor: true,
+  loop: true,
+  keyboard: true,
+  spaceBetween: 50,
+  // initialSlide: 0,
+  preloadImages: false,
+  lazy: true,
+  height: 600,
+  centeredSlides: false,
+  watchSlidesVisibility: true,
+  speed: 600,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+  breakpoints: {
+    1400: {
+      autoHeight: true,
+      slidesPerView: 1,
+      noSwiping: false,
+    },
+    768: {
+      initialSlide: 1,
+      autoHeight: true,
+      slidesPerView: 1,
+      centeredSlides: false,
+      init: false,
+    },
+    360: {
+      spaceBetween: 0,
+      slidesPerView: 1,
+      autoHeight: true,
+      centeredSlides: false,
+      init: false,
+    },
+  },
+  simulateTouch: true,
+  navigation: {
+    nextEl: '.news-swiper-button-next',
+    prevEl: '.news-swiper-button-prev',
+  },
+  on: {
+    init: e => {
+      e.slidesForAnimation = [];
+      e.titlesForAnimation = [];
+      document.querySelectorAll('.news-intro-swiper-wrap .text-to-animate-js').forEach(text => {
+        splitToLines(text);
+        e.slidesForAnimation.push(text);
+        console.log(document.querySelectorAll('.text-to-animate-js'));
+      });
+      document.querySelectorAll('.news .news-intro-slide').forEach(text => {
+        splitToLines(text);
+        e.titlesForAnimation.push(text);
+        console.log(e);
+      });
+    },
+    activeIndexChange: e => {
+      if (!e.slidesForAnimation) return;
+      const currentText = e.slidesForAnimation[e.activeIndex];
+      const currentTitle = e.titlesForAnimation[e.activeIndex];
+      if (!currentText) return;
+      fadeUpLines(currentText);
+      fadeUpLines(currentTitle);
+    },
+  },
+});
 
-  let prevIndex = 0;
-  const swiper1 = new Swiper('.news-gallery-swiper', {
-    grabCursor: true,
-    loop: true,
-    keyboard: true,
-    spaceBetween: 10,
-    // initialSlide: 0,
-    preloadImages: false,
-    lazy: true,
-    height: 600,
-    centeredSlides: false,
-    watchSlidesVisibility: true,
-    allowTouchMove: false,
-    speed: 1600,
-    on: {
-      init: (e) => {
-        let { slides } = e;
-        slides = slides.filter(el => !el.classList.contains('swiper-slide-duplicate'));
-        document.querySelector('.news .news-slides-nav__index-total').textContent = slides.length;
-      },
-      beforeTransitionStart: (e) => {
-        
-        // console.log(e);
-        // console.log(prevIndex, e.realIndex);
-        // console.log((prevIndex < e.realIndex) ? 'next' : 'prev');
-        
-        // const direction = e.touches.startX > e.touches.currentX ? 'forward' : 'backward';
-        // console.log(direction);
-        // // debugger
-        // const item = document.querySelector('.advantages-slider .swiper-slide-prev img');
-        // item.style.transition = '.1s ease-out';
-        // item.style.opacity = 0;
-        // setTimeout(() => {
-        //   item.style.opacity = 1;
-        // }, 1000);
-        // prevIndex = e.realIndex;
+// paralax('[img-paralax]', '', 50);
 
+const paralaxImages = document.querySelectorAll('[img-paralax]');
+paralaxImages.forEach(image => {
+  const wrap = document.createElement('div');
+  wrap.style.overflow = 'hidden';
+  wrap.style.height = '100%';
+  image.parentElement.prepend(wrap);
+  gsap.set(image, { willChange: 'transform', scale: 1.1 });
+  wrap.prepend(image);
+
+  gsap
+    .timeline({
+      ease: 'none',
+      scrollTrigger: {
+        trigger: wrap,
+        scrub: 0.5,
+        markers: true,
+        onLeave: () => {
+          console.log('leave');
+        },
+        // markers: true,
       },
-      activeIndexChange: (e) => {
-        // console.log(e);
-        document.querySelector('.news-slides-nav__index-current').textContent = e.realIndex + 1;
-      }
-    },
-    breakpoints: {
-      1400: {
-        autoHeight: true,
-        slidesPerView: 1.75,
+    })
+    .fromTo(
+      image,
+      {
+        y: -35,
       },
-      768: {
-        initialSlide: 1,
-        autoHeight: true,
-        slidesPerView: 1.75,
-        centeredSlides: false,
+      {
+        y: 35,
+        ease: 'linear',
       },
-      360: {
-        spaceBetween: 0,
-        slidesPerView: 1,
-        autoHeight: true,
-        centeredSlides: false,
-      },
-    },
-    simulateTouch: true,
-    navigation: {
-      nextEl: '.news-swiper-button-next',
-      prevEl: '.news-swiper-button-prev',
-    },
-    pagination: {
-      el: '.news-gallery__pagination',
-      clickable: true,
-      type: 'progressbar',
-    },
-  });
-  document.querySelector('.news-swiper-button-next').addEventListener('click',function(evt){
-    const item = document.querySelector('.news-gallery-swiper .swiper-slide-prev img');
-    item.style.transition = '.1s ease-out';
-    item.style.opacity = 0;
-    setTimeout(() => {
-      item.style.opacity = '';
-    }, 1000);
-  });
-  document.querySelector('.news-swiper-button-prev').addEventListener('click',function(evt){
-    const item = document.querySelector('.news-gallery-swiper .swiper-slide-active img');
-    console.log(item);
-    item.style.transition = '.3s ease-out';
-    item.style.opacity = 0;
-    setTimeout(() => {
-      item.style.opacity = '';
-    }, 1000);
-  });
-  const swiper2 = new Swiper('.news-intro-swiper', {
-    grabCursor: true,
-    loop: true,
-    keyboard: true,
-    spaceBetween: 50,
-    // initialSlide: 0,
-    preloadImages: false,
-    lazy: true,
-    height: 600,
-    centeredSlides: false,
-    watchSlidesVisibility: true,
-    speed: 600,
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
-    breakpoints: {
-      1400: {
-        autoHeight: true,
-        slidesPerView: 1,
-        noSwiping: false,
-      },
-      768: {
-        initialSlide: 1,
-        autoHeight: true,
-        slidesPerView: 1,
-        centeredSlides: false,
-        init: false,
-      },
-      360: {
-        spaceBetween: 0,
-        slidesPerView: 1,
-        autoHeight: true,
-        centeredSlides: false,
-        init: false,
-      },
-    },
-    simulateTouch: true,
-    navigation: {
-      nextEl: '.news-swiper-button-next',
-      prevEl: '.news-swiper-button-prev',
-    },
-    on: {
-      init: (e) => {
-        e.slidesForAnimation = [];
-        e.titlesForAnimation = [];
-        document.querySelectorAll('.news-intro-swiper-wrap .text-to-animate-js').forEach(text => {
-          splitToLines(text);
-          e.slidesForAnimation.push(text);
-          console.log(document.querySelectorAll('.text-to-animate-js'));
-        })
-        document.querySelectorAll('.news .news-intro-slide').forEach(text => {
-          splitToLines(text);
-          e.titlesForAnimation.push(text);
-          console.log(e);
-        })
-      },
-      activeIndexChange: (e) => {
-        if (!e.slidesForAnimation) return;
-        const currentText = e.slidesForAnimation[e.activeIndex];
-        const currentTitle = e.titlesForAnimation[e.activeIndex];
-        if (!currentText) return;
-        fadeUpLines(currentText);
-        fadeUpLines(currentTitle);
-      }
-    }
-  });
+    );
+});

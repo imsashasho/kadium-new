@@ -1,18 +1,5 @@
 
 
-body {
-	margin: 0;
-	--color-text: #fff;
-	--color-bg: #000;
-	--color-link: #fff;
-	--color-link-hover: #fff;
-	--color-frame: #ff5ba4;
-	color: var(--color-text);
-	background-color: var(--color-bg);
-	font-family: $default-font;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 
 a {
 	text-decoration: none;
@@ -26,7 +13,6 @@ a {
 	text-align: center;
 	position: relative;
 	z-index: 1000;
-	color: var(--color-frame);
 }
 
 .frame__title {
@@ -51,11 +37,6 @@ a {
 
 .frame__demos {
 	margin: 1rem 0;
-}
-
-a.frame__demo--current,
-a.frame__demo--current:hover {
-	color: var(--color-text);
 }
 
 .slideshow {
@@ -125,11 +106,14 @@ a.frame__demo--current:hover {
 
 .text-row.text-title {
 	margin-bottom: 30px;
+	color: $textLightGrey;
 }
 
-.text-row > span {
+.text-row.text-descr {
 	display: block;
 	position: relative;
+	color: $textGrey;
+
 }
 
 .slides__caption-link {
@@ -208,7 +192,7 @@ a.frame__demo--current:hover {
 
 .slides-nav__index {
 	white-space: nowrap;
-	color: var(--color-text);
+	color: $wc;
 	text-align: center;
 	display: flex;
 	align-items: center;
@@ -274,7 +258,7 @@ a.frame__demo--current:hover {
 		margin-right: 20px;
 	}
 	.slideshow {
-		background: var(--color-bg);
+		background: $bc;
 	}
 
 }

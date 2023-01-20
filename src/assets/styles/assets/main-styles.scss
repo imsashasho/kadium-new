@@ -147,3 +147,18 @@ a:focus-visible {
     }
   }
 }
+
+.main-page-wrap {
+  padding: 90px 80px 100px 80px;
+
+}
+.main-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+.main-intro__title {
+  color: $bc;
+}
