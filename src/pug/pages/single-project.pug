@@ -1,0 +1,34 @@
+
+extends ../layout/main
+block meta
+  title= 'Новини'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/singleProject.bundle.js')
+  
+  
+
+block header
+  include ../includes/header.pug
+  include ../includes/menu.pug
+block content
+    include ../includes/single-project/main.pug
+    include ../includes/single-project/main.pug
+  
+  
+  
+
+block modal 
+  
+
+  
+
+block footer
+  include ../includes/footer.pug
+
+

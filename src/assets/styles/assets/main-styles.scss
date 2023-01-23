@@ -46,6 +46,27 @@ button {
 
 }
 
+.btn-small {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	background: none;
+	border: 0;
+	width: 60px;
+	height: 60px;
+	padding: 0;
+	background: $mc1;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	svg {
+		width: 20px;
+		height: 20px;
+		fill: $textLightGrey;
+		transform: rotate(270deg);
+	}
+}
+
 .slider-btn {
   position: relative;
   display: flex;
@@ -117,6 +138,17 @@ a:focus-visible {
     @include mobile {
       font-size: 36px;
     }
+  }
+
+  &-medium-uppercase {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
   }
 
   &-descr{

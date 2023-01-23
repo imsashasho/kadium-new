@@ -27,6 +27,7 @@
 
     }
     &-socials-list {
+        max-width: 722px;
         padding: 50px;
         display: flex;
         flex-wrap: wrap;
@@ -47,10 +48,12 @@
     }
     &-socials-card__title {
         margin-bottom: 8px;
+        color: $textLightGrey;
 
     }
     &-socials-card__descr {
         margin-bottom: 8px;
+        color: $textGrey;
 
     }
     &-socials-card__link {

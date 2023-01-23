@@ -84,7 +84,7 @@
     "bezier-easing": "^2.1.0",
     "cleave.js": "^1.6.0",
     "file-loader": "^6.2.0",
-    "gsap": "^3.10.4",
+    "gsap": "^3.11.2",
     "i18next": "^19.8.4",
     "imagesloaded": "^5.0.0",
     "intl-tel-input": "^17.0.12",

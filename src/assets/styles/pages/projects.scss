@@ -1,4 +1,5 @@
 .projects {
+    background: $bc;
     height: fit-content;
     position: relative;
     &-wrap {
@@ -109,6 +110,7 @@
         display: flex;
         flex-direction: column;
         span {
+            color: $textGrey;
             margin-bottom: 8px;
             &:last-child {
                 margin-bottom: 0;
@@ -116,10 +118,12 @@
         }
 
     }
+
     &-slide-info-link {
         color: $textGrey;
         text-decoration: underline;
         width: 25%;
+        text-align: end;
 
     }
 }

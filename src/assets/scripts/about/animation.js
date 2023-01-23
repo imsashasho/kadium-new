@@ -1,4 +1,21 @@
-import gsap from 'gsap';
+import { gsap, ScrollTrigger } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger);
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: '.about-page-intro',
+      scrub: 1,
+      start: '0% top',
+      end: '100% top',
+      // markers: true,
+    },
+  })
+  .to('.about-page-intro-img', {
+    // y: 150,
+    scale: 1.1,
+  })
+  .to('.about-page-intro-wrap', { autoAlpha: 0, duration: 0.35 }, '<');
 
 const paralaxImages = document.querySelectorAll('[img-paralax]');
 paralaxImages.forEach((image) => {

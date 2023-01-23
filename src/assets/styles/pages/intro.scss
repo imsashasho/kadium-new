@@ -135,26 +135,7 @@ a {
 
 
 .slides__caption-link-btn {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	background: none;
-	border: 0;
-	width: 60px;
-	height: 60px;
-	padding: 0;
-	background: $mc1;
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	margin-right: 20px;
-
-	svg {
-		width: 20px;
-		height: 20px;
-		fill: $textLightGrey;
-		transform: rotate(270deg);
-	}
 }
 
 .slides-nav__button {
