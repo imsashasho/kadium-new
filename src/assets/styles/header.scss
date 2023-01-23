@@ -4,10 +4,14 @@
   left: 0;
   height: var(--header-h);
   width: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background: $textLightGrey;
   z-index: 100;
+  transition: all cubic-bezier(0,0.66,0.79,0.67) 0.3s;
+
+  &.bg-header {
+    height: 60px;
+    background: $mc2;
+  }
 
   &-inner {
     max-width: 100%;
@@ -16,6 +20,98 @@
     align-content: center;
     align-items: center;
     justify-content: space-between; 
+  }
+
+  &-logo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &-logo {
+    display: block;
+    height: 38.9px;
+    width: 164px;
+
+    svg {
+      height: 38.9px;
+      width: 164px;
+    }
+  }
+  &-lang-wrap {
+
+  }
+  &-lang {
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+    width: 35px;
+    &::after {
+      content: url('../images/arrow-small.svg');
+      display: block;
+      position: absolute;
+      top: 0%;
+      right: 0;
+      transform: translateY(-50%);
+      height: 4px;
+      width: 6px;
+      fill: $mc1;
+    }
+
+  }
+  &-lang__item{
+
+  }
+  &-list-wrap {
+
+  }
+  &-list {
+    display: flex;
+
+  }
+  &-list-item {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+  &-list-link {
+
+  }
+  &-call-wrap {
+    display: flex;
+    align-items: center;
+
+  }
+  &-number-wrap {
+    margin-right: 20px;
+
+  }
+  &-number__link{
+    position: relative;
+
+    &::before {
+      content: url('../images/phone.svg');
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: -12px;
+      transform: translate(-100%, -50%);
+      height: 16px;
+      width: 16px;
+      fill: $mc1;
+      
+    }
+
+  }
+  &-callback-wrap {
+    
+
+  }
+  &-callback__btn {
+
   }
 }
 

@@ -1,3 +1,28 @@
 header.header
     .header-inner.container
-       
+        .header-logo-wrap
+            a(href='index.html').header-logo
+                +svg('logo')
+        .header-lang-wrap
+            ul.lang.header-lang
+                li(data-animate-links).header-lang__item.header-lang__item--active
+                    a(href="#").text-header UA
+                li(data-animate-links).header-lang__item
+                    a(href="#").text-header EN
+        .header-list-wrap 
+            ul.header-list
+                li.header-list-item
+                    a(href='about.html').header-list-link.text-header ПРО КОМПАНІЮ
+                li.header-list-item
+                    a(href='projects.html').header-list-link.text-header ПРОЄКТИ
+                li.header-list-item
+                    a(href='news.html').header-list-link.text-header Акції та новини
+                li.header-list-item
+                    a(href='contacts.html').header-list-link.text-header КОНТАКТИ
+        .header-call-wrap
+            .header-number-wrap 
+                a(href="tel:(099)2847777").header-number__link.text-header (099) 284 7777
+            .header-callback-wrap 
+                button.header-callback__btn.btn Замовити дзвінок
+        
+        

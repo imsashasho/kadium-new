@@ -17,4 +17,123 @@
       max-width: 250px;
     }
   }
+
+  &-wrap {
+    display: flex;
+    background: $wc;
+
+  }
+  &-menu-wrap {
+    padding: 150px 80px 115px 80px;
+    width: 35%;
+  }
+  &-menu {
+    display: flex;
+    flex-direction: column;
+
+  }
+  &-menu-link {
+    margin-bottom: 12px;
+    color: $bc;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+  &-form-wrap {
+    padding: 150px 80px 115px 80px;
+    width: 65%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../images/about/noise.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &-form {
+    width: 70%;
+  }
+  &-form__title {
+    width: 50%;
+    color: $bc;
+    margin-bottom: 20px;
+
+  }
+  &-form__descr {
+    width: 50%;
+    color: $textGreySpecial;
+    margin-bottom: 40px;
+
+  }
+  &-form__form {
+
+  }
+
+  &-form__hint {
+    color: $bc;
+    margin-bottom: 8px;
+  }
+
+  &-form__field {
+    margin-bottom: 40px;
+    margin-top: 0!important;
+    height: 70px!important;
+  }
+
+  &-form__input {
+    border: none;
+    outline: none;
+    background: $wc;
+    padding: 0;
+    font-family: $default-font;
+    padding: 10px 40px;
+    margin-bottom: 40px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 300;
+    color: $bc;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    text-transform: none;
+    margin-top: 0!important;
+    height: 70px;
+  }
+  
+  &-form__btn-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &-form__btn {
+    margin-right: 20px;
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-form__btn-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: right;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $bc;
+
+  }
+  &-up {
+    position: absolute;
+    top: 150px;
+    right: 80px;
+    svg {
+      transform: rotate(90deg);
+    }
+
+  }
+
 }

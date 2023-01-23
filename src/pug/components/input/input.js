@@ -4,6 +4,7 @@ export default class SexyInput {
   constructor(setting) {
     this.selected = false;
     this.$field = setting.$field;
+    console.log(this.$field)
     this.$input = setting.$input || setting.$field.querySelector('input');
     this.typeInput = setting.typeInput || 'text';
     this.animation = setting.animation || 'none';

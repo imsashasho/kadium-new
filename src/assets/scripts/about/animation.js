@@ -31,7 +31,7 @@ paralaxImages.forEach((image) => {
       ease: 'none',
       scrollTrigger: {
         trigger: wrap,
-        scrub: 0.5,
+        scrub: 1,
         markers: false,
         onLeave: () => {
           console.log('leave');
@@ -42,11 +42,11 @@ paralaxImages.forEach((image) => {
     .fromTo(
       image,
       {
-        y: -35,
+        y: -40,
       },
       {
-        y: 35,
-        ease: 'linear',
+        y: 40,
+        ease: 'power4.out',
       },
     );
 });
