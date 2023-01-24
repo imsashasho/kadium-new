@@ -2,12 +2,8 @@
   padding: 0 80px;
   margin: 0 auto;
 
-  @include tabletLarge {
-    padding: 0 50px;
-  }
-
   @include tablet {
-    padding: 0 50px;
+    padding: 0 10px;
   }
 
   @include mobile {
@@ -59,12 +55,18 @@ button {
 	background: $mc1;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	svg {
-		width: 20px;
-		height: 20px;
-		fill: $textLightGrey;
-		transform: rotate(270deg);
-	}
+
+  @include tabletLarge {
+    width: 52px;
+    height: 52px;
+  }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: $textLightGrey;
+      transform: rotate(270deg);
+    }
 }
 
 .slider-btn {
@@ -78,6 +80,11 @@ button {
   padding: 0;
   background: #2A2C65;
   -webkit-appearance: none;
+
+  @include tabletLarge {
+    width: 52px;
+    height: 52px;
+  }
 
   svg {
     width: 20px;
@@ -194,12 +201,33 @@ a:focus-visible {
 .main-page-wrap {
   padding: 90px 80px 100px 80px;
 
+  @include tablet {
+    padding: 110px 10px 100px 10px;
+  }
+
+  @include mobile {
+    padding: 86px 12px 60px 12px;
+  }
+
 }
 .main-intro {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+
+  @include tablet {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+
+    .breadcrumbs {
+      margin-bottom: 10px;
+    }
+  }
+
+    @include mobile {
+      margin-bottom: 12px;
+  }
 
 }
 .main-intro__title {

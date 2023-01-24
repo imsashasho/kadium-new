@@ -9,10 +9,32 @@ a {
 
 
 .frame {
-	padding: 3rem 5vw;
-	text-align: center;
-	position: relative;
-	z-index: 1000;
+	position: absolute;
+	text-align: left;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	display: grid;
+	align-content: space-between;
+	width: 100%;
+	max-width: none;
+	height: 100vh;
+	padding: 50px 80px;
+	pointer-events: none;
+	grid-template-columns: 25% 50% 25%;
+	grid-template-rows: auto auto auto;
+	grid-template-areas:	'title links info'
+							'... ... ...'
+							'demos demos nav';
+	
+
+	@include tablet {
+		padding: 50px 10px;
+		// text-align: center;
+		// position: relative;
+		// z-index: 1000;
+
+	}
 }
 
 .frame__title {
@@ -41,9 +63,10 @@ a {
 
 .slideshow {
 	width: 100vw;
-	height: calc(100vh - 13rem);
+	height: 100vh;
 	position: relative;
 	overflow: hidden;
+	background: $bc;
 }
 
 .slide {
@@ -92,6 +115,11 @@ a {
 	padding: 0 80px;
 	cursor: default;
 	width: 30%;
+	
+	@include tablet {
+		width: 50%;
+		padding: 0 10px;
+	}
 }
 
 .slides__caption-headline {
@@ -130,12 +158,25 @@ a {
 	z-index: 10;
 	pointer-events: all;
 	width: 20%;
+
+	@include tablet {
+		width: 40%;
+	}
+
+	@include mobile {
+		width: 60%;
+	}
 }
 
 .slides-nav {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	grid-area: nav;
+	justify-self: end;
+	align-self: end;
+	z-index: 10;
+	pointer-events: all;
 }
 
 
@@ -144,14 +185,6 @@ a {
 }
 
 .slides-nav__button {
-	display: block;
-	cursor: pointer;
-	background: none;
-	border: 0;
-	width: 60px;
-	height: 60px;
-	padding: 0;
-	background: $mc1;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 
@@ -182,6 +215,11 @@ a {
 	text-align: center;
 	display: flex;
 	align-items: center;
+	margin-right: 20px;
+
+	@include mobile {
+		display: none;
+	}
 }
 
 
@@ -206,45 +244,4 @@ a {
 
 .slides-nav__index-current span {
 	display: inline-block;
-}
-
-@media screen and (min-width: 53em) {
-	.frame {
-		position: absolute;
-		text-align: left;
-		z-index: 100;
-		top: 0;
-		left: 0;
-		display: grid;
-		align-content: space-between;
-		width: 100%;
-		max-width: none;
-		height: 100vh;
-		padding: 50px 80px;
-		pointer-events: none;
-		grid-template-columns: 25% 50% 25%;
-		grid-template-rows: auto auto auto;
-		grid-template-areas: 'title links info'
-							'... ... ...'
-							'demos demos nav';
-	}
-	
-	.slides-nav {
-		grid-area: nav;
-		justify-self: end;
-		align-self: end;
-		z-index: 10;
-		pointer-events: all;
-	}
-	
-	.slideshow {
-		height: 100vh;
-	}
-	.slides-nav__index {
-		margin-right: 20px;
-	}
-	.slideshow {
-		background: $bc;
-	}
-
 }

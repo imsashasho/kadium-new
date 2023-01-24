@@ -5,6 +5,10 @@
             flex-direction: column-reverse;
             align-items: flex-start;
 
+            @include mobile {
+                margin-bottom: 12px;
+            }
+
             .breadcrumbs {
                 margin-bottom: 10px;
             }
@@ -15,6 +19,10 @@
     &-card-wrap {
         margin-bottom: 100px;
 
+        @include mobile {
+            margin-bottom: 60px;
+        }
+
     }
     &-card {
         padding: 60px 51px;
@@ -22,11 +30,25 @@
         justify-content: space-between;
         background: $mc2;
 
+        @include tablet {
+            padding: 40px;
+            flex-direction: column-reverse;
+        }
+
+        @include mobile {
+            padding: 20px;
+        }
+
 
     }
     &-card-intro {
         width: calc(66.3% - 51px);
         margin-right: 51px;
+
+        @include tablet {
+            width: 100%;
+            margin-right: 0;
+        }
 
     }
     &-card-intro-block {
@@ -64,6 +86,10 @@
     }
     &-card-img-wrap {
         width: 33.7%;
+        @include tablet {
+            width: 100%;
+            margin-bottom: 40px;
+        }
 
     }
     &-card-img {
@@ -74,6 +100,10 @@
     &-last-updates__title {
         color: $bc;
         margin-bottom: 40px;
+
+        @include tablet {
+            margin-bottom: 12px;
+        }
     }
 
 }

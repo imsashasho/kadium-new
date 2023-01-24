@@ -9,28 +9,26 @@ const swiper = new Swiper('.projects-swiper', {
   preloadImages: false,
   lazy: true,
   watchSlidesVisibility: true,
+  centeredSlides: true,
   speed: 1600,
 
   breakpoints: {
-    1400: {
+    1366: {
       spaceBetween: 20,
       // autoHeight: true,
       slidesPerView: 3,
-      centeredSlides: true,
       loop: true,
     },
     768: {
-      spaceBetween: 50,
-      initialSlide: 1,
-      autoHeight: true,
+      spaceBetween: 10,
       slidesPerView: 2,
-      centeredSlides: false,
+      centeredSlides: true,
     },
     360: {
-      spaceBetween: 15,
-      slidesPerView: 1.25,
+      spaceBetween: 0,
+      slidesPerView: 1.35,
+      centeredSlides: true,
       autoHeight: true,
-      centeredSlides: false,
     },
   },
   simulateTouch: true,

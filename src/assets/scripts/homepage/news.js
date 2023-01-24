@@ -44,12 +44,12 @@ const swiper1 = new Swiper('.news-gallery-swiper', {
   breakpoints: {
     1400: {
       autoHeight: true,
-      slidesPerView: 1.75,
+      slidesPerView: 2,
     },
     768: {
       initialSlide: 1,
       autoHeight: true,
-      slidesPerView: 1.75,
+      slidesPerView: 1.2,
       centeredSlides: false,
     },
     360: {
@@ -112,13 +112,11 @@ const swiper2 = new Swiper('.news-intro-swiper', {
     768: {
       initialSlide: 1,
       autoHeight: true,
-      slidesPerView: 1,
       centeredSlides: false,
       init: false,
     },
     360: {
       spaceBetween: 0,
-      slidesPerView: 1,
       autoHeight: true,
       centeredSlides: false,
       init: false,

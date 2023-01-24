@@ -9,6 +9,14 @@
         width: 100%;
         align-items: center;
 
+        @include tablet {
+            padding: 100px 0px;
+        }
+
+        @include mobile {
+            padding: 60px 0;
+        }
+
     }
     &-title {
         color: $textGrey;
@@ -23,6 +31,13 @@
         width: 100%;
         padding: 0 80px;
         z-index: 100;
+
+        @include tablet {
+            position: relative;
+            bottom: auto;
+            padding: 0 10px;
+            margin-top: 40px;
+        }
         
 
     }
@@ -86,6 +101,8 @@
             .projects-slide-info {
                 opacity: 1;
                 transition: opacity 3000ms cubic-bezier(0.4, 0, 0.2, 1);
+
+                
             }
 
             img {
@@ -105,6 +122,11 @@
         justify-content: space-between;
         align-items: center;
 
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
     }
     &-slide-info-address {
         display: flex;
@@ -112,6 +134,10 @@
         span {
             color: $textGrey;
             margin-bottom: 8px;
+
+            @include mobile {
+                margin-bottom: 0;
+            }
             &:last-child {
                 margin-bottom: 0;
             }
@@ -123,7 +149,15 @@
         color: $textGrey;
         text-decoration: underline;
         width: 25%;
-        text-align: end;
+
+        @include tablet {
+            width: 30%;
+        }
+
+        @include mobile {
+            width: 100%;
+            margin-top: 12px;
+        }
 
     }
 }
