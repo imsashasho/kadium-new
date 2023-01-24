@@ -1,9 +1,14 @@
+import { Sketch } from './sketch';
+
 // planetary
 const sketch = new Sketch({
   debug: true,
   uniforms: {
     intensity: {
-      value: 1, type: 'f', min: 0.0, max: 3,
+      value: 1,
+      type: 'f',
+      min: 0.0,
+      max: 3,
     },
   },
   fragment: `

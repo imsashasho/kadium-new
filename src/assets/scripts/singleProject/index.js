@@ -1,6 +1,6 @@
-import './gsap';
 import './three';
-import './orbit';
+import './dat-gui';
+import './gsap';
 import './sketch';
-
+import './orbit';
 import './slider';

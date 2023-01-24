@@ -104,6 +104,11 @@ a {
 	display: block;
 }
 
+.text-row>span {
+    display: block;
+    position: relative; 
+}
+
 .text-row.text-title {
 	margin-bottom: 30px;
 	color: $textLightGrey;

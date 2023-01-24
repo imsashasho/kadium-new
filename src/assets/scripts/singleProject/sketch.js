@@ -1,8 +1,8 @@
-
-class Sketch {
+export default class Sketch {
   constructor(opts) {
     this.scene = new THREE.Scene();
-    this.vertex = 'varying vec2 vUv;void main() {vUv = uv;gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );}';
+    this.vertex =
+      'varying vec2 vUv;void main() {vUv = uv;gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );}';
     this.fragment = opts.fragment;
     this.uniforms = opts.uniforms;
     this.renderer = new THREE.WebGLRenderer();
@@ -16,7 +16,6 @@ class Sketch {
     this.easing = opts.easing || 'easeInOut';
 
     this.clicker = document.getElementById('content');
-
 
     this.container = document.getElementById('slider');
     this.images = JSON.parse(this.container.getAttribute('data-images'));
@@ -52,7 +51,7 @@ class Sketch {
     const promises = [];
     const that = this;
     this.images.forEach((url, i) => {
-      const promise = new Promise((resolve) => {
+      const promise = new Promise(resolve => {
         that.textures[i] = new THREE.TextureLoader().load(url, resolve);
       });
       promises.push(promise);
@@ -75,9 +74,10 @@ class Sketch {
     this.settings = { progress: 0.5 };
     // if(this.debug) this.gui.add(this.settings, "progress", 0, 1, 0.01);
 
-    Object.keys(this.uniforms).forEach((item) => {
+    Object.keys(this.uniforms).forEach(item => {
       this.settings[item] = this.uniforms[item].value;
-      if (this.debug) this.gui.add(this.settings, item, this.uniforms[item].min, this.uniforms[item].max, 0.01);
+      if (this.debug)
+        this.gui.add(this.settings, item, this.uniforms[item].min, this.uniforms[item].max, 0.01);
     });
   }
 
@@ -91,16 +91,16 @@ class Sketch {
     this.renderer.setSize(this.width, this.height);
     this.camera.aspect = this.width / this.height;
 
-
     // image cover
     this.imageAspect = this.textures[0].image.height / this.textures[0].image.width;
-    let a1; let a2;
+    let a1;
+    let a2;
     if (this.height / this.width > this.imageAspect) {
       a1 = (this.width / this.height) * this.imageAspect;
       a2 = 1;
     } else {
       a1 = 1;
-      a2 = (this.height / this.width) / this.imageAspect;
+      a2 = this.height / this.width / this.imageAspect;
     }
 
     this.material.uniforms.resolution.value.x = this.width;
@@ -187,7 +187,7 @@ class Sketch {
     this.material.uniforms.time.value = this.time;
     // this.material.uniforms.progress.value = this.settings.progress;
 
-    Object.keys(this.uniforms).forEach((item) => {
+    Object.keys(this.uniforms).forEach(item => {
       this.material.uniforms[item].value = this.settings[item];
     });
 

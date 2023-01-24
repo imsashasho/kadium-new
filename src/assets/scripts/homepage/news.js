@@ -14,14 +14,14 @@ const swiper1 = new Swiper('.news-gallery-swiper', {
   centeredSlides: false,
   watchSlidesVisibility: true,
   allowTouchMove: false,
-  speed: 1600,
+  speed: 1400,
   on: {
-    init: (e) => {
+    init: e => {
       let { slides } = e;
       slides = slides.filter(el => !el.classList.contains('swiper-slide-duplicate'));
       document.querySelector('.news .news-slides-nav__index-total').textContent = slides.length;
     },
-    beforeTransitionStart: (e) => {
+    beforeTransitionStart: e => {
       // console.log(e);
       // console.log(prevIndex, e.realIndex);
       // console.log((prevIndex < e.realIndex) ? 'next' : 'prev');
@@ -36,7 +36,7 @@ const swiper1 = new Swiper('.news-gallery-swiper', {
       // }, 1000);
       // prevIndex = e.realIndex;
     },
-    activeIndexChange: (e) => {
+    activeIndexChange: e => {
       // console.log(e);
       document.querySelector('.news-slides-nav__index-current').textContent = e.realIndex + 1;
     },
@@ -70,7 +70,7 @@ const swiper1 = new Swiper('.news-gallery-swiper', {
     type: 'progressbar',
   },
 });
-document.querySelector('.news-swiper-button-next').addEventListener('click', (evt) => {
+document.querySelector('.news-swiper-button-next').addEventListener('click', evt => {
   const item = document.querySelector('.news-gallery-swiper .swiper-slide-prev img');
   item.style.transition = '.1s ease-out';
   item.style.opacity = 0;
@@ -78,7 +78,7 @@ document.querySelector('.news-swiper-button-next').addEventListener('click', (ev
     item.style.opacity = '';
   }, 1000);
 });
-document.querySelector('.news-swiper-button-prev').addEventListener('click', (evt) => {
+document.querySelector('.news-swiper-button-prev').addEventListener('click', evt => {
   const item = document.querySelector('.news-gallery-swiper .swiper-slide-active img');
   console.log(item);
   item.style.transition = '.3s ease-out';
@@ -130,21 +130,21 @@ const swiper2 = new Swiper('.news-intro-swiper', {
     prevEl: '.news-swiper-button-prev',
   },
   on: {
-    init: (e) => {
+    init: e => {
       e.slidesForAnimation = [];
       e.titlesForAnimation = [];
-      document.querySelectorAll('.news-intro-swiper-wrap .text-to-animate-js').forEach((text) => {
+      document.querySelectorAll('.news-intro-swiper-wrap .text-to-animate-js').forEach(text => {
         splitToLines(text);
         e.slidesForAnimation.push(text);
         console.log(document.querySelectorAll('.text-to-animate-js'));
       });
-      document.querySelectorAll('.news .news-intro-slide').forEach((text) => {
+      document.querySelectorAll('.news .news-intro-slide').forEach(text => {
         splitToLines(text);
         e.titlesForAnimation.push(text);
         console.log(e);
       });
     },
-    activeIndexChange: (e) => {
+    activeIndexChange: e => {
       if (!e.slidesForAnimation) return;
       const currentText = e.slidesForAnimation[e.activeIndex];
       const currentTitle = e.titlesForAnimation[e.activeIndex];
