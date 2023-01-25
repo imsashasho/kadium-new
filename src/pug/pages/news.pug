@@ -1,5 +1,18 @@
 
 extends ../layout/main
+
+block variable
+  -
+    var title_page = 'News'
+    var id_page = 'id-all-news'
+    var class_page = 'page-all-news'
+    var breadcrumbsSubitem = [
+      {
+        label: 'allNews',
+        link: pagesLink[0].allNews
+      }
+    ]
+
 block meta
   title= 'Новини'
   meta(name='description', content='')

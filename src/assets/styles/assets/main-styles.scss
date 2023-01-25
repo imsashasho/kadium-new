@@ -189,12 +189,13 @@ a:focus-visible {
   &-header {
     font-family: $default-font;
     font-style: normal;
-    font-weight: 450;
+    font-weight: 300;
     font-size: 16px;
     line-height: 120%;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: $mc1;
+    transition: all ease-in-out 0.3s;
   }
 }
 

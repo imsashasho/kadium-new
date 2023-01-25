@@ -1,5 +1,18 @@
 
 extends ../layout/main
+
+block variable
+  -
+    var title_page = 'Projects'
+    var id_page = 'id-all-projects'
+    var class_page = 'page-all-projects'
+    var breadcrumbsSubitem = [
+      {
+        label: 'allProjects',
+        link: pagesLink[0].allProjects
+      }
+    ]
+
 block meta
   title= 'Новини'
   meta(name='description', content='')
@@ -20,14 +33,8 @@ block header
   include ../includes/menu.pug
 block content
   include ../includes/projects/main.pug
-  
-  
-  
 
 block modal 
-  
-
-  
 
 block footer
   include ../includes/footer.pug
