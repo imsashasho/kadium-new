@@ -1,5 +1,7 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { contactForm } from './contactForm';
+import { contactPopup } from './contactPopup';
 
 {
   const headerRef = document.querySelector('.header');
@@ -26,4 +28,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   };
 
   toggleBtnRef.addEventListener('click', toggleMenu);
+
+  contactForm(document.querySelector('[data-contact-popup]'));
+
+  const requestFormRef = document.querySelector('.header-callback-wrap');
+
+  requestFormRef.addEventListener('click', () => {
+    contactPopup.open();
+  });
+
+  const newLocal = '[data-contact-popup]';
+  contactForm(document.querySelector(newLocal), () => contactPopup.close());
 }

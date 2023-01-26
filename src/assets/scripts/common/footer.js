@@ -7,7 +7,6 @@ const formsWithTel = ['#call-form'];
 
 formsWithTel.forEach(form => {
   const $form = document.querySelector(form);
-  console.log(form);
   if ($form) {
     /* eslint-disable */
     new FormMonster({
@@ -16,14 +15,14 @@ formsWithTel.forEach(form => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
-            const callBlock = document.querySelector('.call-block');
-            const callThanksBlock = document.querySelector('.call-thanks-block');
-            callBlock.classList.add('hidden');
-            callThanksBlock.classList.add('active');
-            callThanksBlock.classList.remove('hidden');
+          const callBlock = document.querySelector('.call-block');
+          const callThanksBlock = document.querySelector('.call-thanks-block');
+          callBlock.classList.add('hidden');
+          callThanksBlock.classList.add('active');
+          callThanksBlock.classList.remove('hidden');
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
-        fields: {  
+        fields: {
           phone: {
             inputWrapper: new SexyInput({
               animation: 'none',
@@ -47,8 +46,6 @@ formsWithTel.forEach(form => {
     // }, false);
   }
 });
-
-
 
 const footer = document.querySelector('footer');
 

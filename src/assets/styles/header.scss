@@ -13,6 +13,11 @@
     background: $mc2;
   }
 
+  #change-color {
+    fill: $mc1!important;
+    transition: all ease-in-out 0.4s;
+  }
+
   &-inner {
     max-width: 100%;
     height: 100%;
@@ -397,6 +402,7 @@
   color: $mc2;
 }
 
+#id-about,
 #id-home-page {
   .header {
     background: transparent;

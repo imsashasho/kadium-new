@@ -80,7 +80,6 @@ document.querySelector('.news-swiper-button-next').addEventListener('click', evt
 });
 document.querySelector('.news-swiper-button-prev').addEventListener('click', evt => {
   const item = document.querySelector('.news-gallery-swiper .swiper-slide-active img');
-  console.log(item);
   item.style.transition = '.3s ease-out';
   item.style.opacity = 0;
   setTimeout(() => {
@@ -134,12 +133,11 @@ const swiper2 = new Swiper('.news-intro-swiper', {
       document.querySelectorAll('.news-intro-swiper-wrap .text-to-animate-js').forEach(text => {
         splitToLines(text);
         e.slidesForAnimation.push(text);
-        console.log(document.querySelectorAll('.text-to-animate-js'));
+        // console.log(document.querySelectorAll('.text-to-animate-js'));
       });
       document.querySelectorAll('.news .news-intro-slide').forEach(text => {
         splitToLines(text);
         e.titlesForAnimation.push(text);
-        console.log(e);
       });
     },
     activeIndexChange: e => {
