@@ -19,6 +19,7 @@
     &__text {
         margin-bottom: 40px;
         text-align: left;
+        z-index: 10;
     }
 
     &__title {
@@ -34,6 +35,10 @@
 
     &__btn {
         margin: 0 auto;
+    }
+
+    &-form {
+      z-index: 10;
     }
 
     &-form__hint {

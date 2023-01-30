@@ -38,10 +38,19 @@
     display: block;
     height: 38.9px;
     width: 164px;
+    @include mobile {
+      width: 105px;
+      height: 24.9px;
+    }
 
     svg {
       height: 38.9px;
       width: 164px;
+
+      @include mobile {
+        width: 105px;
+        height: 24.9px;
+      }
     }
   }
   &-lang-wrap {
@@ -103,6 +112,21 @@
       transition: all ease-in-out 0.3s;
     }
 
+    @include mobile {
+      display: none;
+
+    }
+
+  }
+
+  &-call-wrap-mobile {
+    display: none;
+    @include mobile {
+      pointer-events: all;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   &-number-wrap {
     margin-right: 20px;
@@ -154,10 +178,7 @@
   width: 100%;
   height: fit-content;
   @include mobile {
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    background-color: $wc;
+    
   }
 
   @media screen and (max-width: 365px) {
@@ -402,6 +423,7 @@
   color: $mc2;
 }
 
+#id-single-project,
 #id-about,
 #id-home-page {
   .header {

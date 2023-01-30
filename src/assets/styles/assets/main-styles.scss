@@ -65,6 +65,7 @@ button {
       width: 20px;
       height: 20px;
       fill: $textLightGrey;
+      stroke: $textLightGrey;
       transform: rotate(270deg);
     }
 }
@@ -89,7 +90,8 @@ button {
   svg {
     width: 20px;
     height: 20px;
-    fill: #E8E9E9;
+    fill: $textLightGrey;
+    stroke: $textLightGrey;
   }
 
 }
