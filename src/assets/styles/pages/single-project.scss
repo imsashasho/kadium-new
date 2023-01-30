@@ -71,6 +71,12 @@
 
     }
 
+    &__descr {
+        display: block;
+        color: #D5DEE8;
+        margin-bottom: 20px;
+    }
+
     &__details-title {
         color: $wc;
     }

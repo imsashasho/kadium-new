@@ -8,14 +8,12 @@
             form(data-contact-popup)#popup-form
                 p.footer-form__hint.text-descr Ім’я:
                 .contact-popup-form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
-                    input(type='text' name="name").contact-popup-form__input
-                    .contact-popup-input-message.text-descr(data-input-message) Микола
+                    input(type='text' name="name" placeholder="Микола").contact-popup-form__input
+                    .contact-popup-input-message.text-descr(data-input-message)
                 p.footer-form__hint.text-descr Телефон:
                 .contact-popup-form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
                     input(type='text' name="phone").contact-popup-form__input
-                    .contact-popup-input-message.text-descr(data-input-message) +__(__)____
+                    .contact-popup-input-message.text-descr(data-input-message)
                 button(type="submit" data-btn-submit).btn
                     span(data-btn-submit-text).link__text.usn Надіслати
-      
-                button.btn.thank-you-popup__btn Закрити
-            .close-popup
+            .close-popup.btn-small.close-form

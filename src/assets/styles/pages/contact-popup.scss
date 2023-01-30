@@ -50,6 +50,7 @@
         margin-bottom: 40px;
         margin-top: 0!important;
         height: 70px!important;
+        position: relative;
 
     }
 
@@ -75,6 +76,7 @@
     &-input-message {
         position: absolute;
         color: $textGreySpecial;
+        bottom: -25px;
 
 
     }

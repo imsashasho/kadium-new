@@ -141,14 +141,17 @@
 
   &-form__btn {
     margin-right: 20px;
+    position: relative;
     svg {
       transform: rotate(180deg);
     }
   }
 
   &-form__btn-text {
+    position: absolute;
+    left: 70px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
     line-height: 120%;
     text-align: right;

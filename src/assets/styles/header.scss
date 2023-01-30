@@ -54,18 +54,25 @@
     }
   }
   &-lang-wrap {
-
-  }
-  &-lang {
     position: relative;
     height: 20px;
     overflow: hidden;
     width: 35px;
+    transition: all ease-in-out 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.4s ease, margin-top 0.4s ease;
+    flex-shrink: 0;
+    cursor: pointer;
     &::after {
       content: url('../images/arrow-small.svg');
       display: block;
       position: absolute;
-      top: 0%;
+      top: 0;
       right: 0;
       transform: translateY(-50%);
       height: 4px;
@@ -73,6 +80,17 @@
       fill: $mc1;
     }
 
+    &:hover {
+      height: 50px;
+      margin-top: 27px;
+        
+
+    }
+
+  }
+  &-lang {
+    position: absolute;
+    top: 0;
   }
   &-lang__item{
 
@@ -446,7 +464,7 @@
       color: $textLightGrey;
     }
 
-    .header-lang::after {
+    .header-lang-wrap::after {
       content: url(../images/arrow-small-grey.svg);
       display: block;
       position: absolute;
@@ -492,7 +510,7 @@
       color: $mc1;
     }
 
-    .header-lang::after {
+    .header-lang-wrap::after {
       content: url(../images/arrow-small.svg);
       display: block;
       position: absolute;

@@ -15,13 +15,13 @@ formsWithTel.forEach(form => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
-          const callBlock = document.querySelector('.call-block');
-          const callThanksBlock = document.querySelector('.call-thanks-block');
-          callBlock.classList.add('hidden');
-          callThanksBlock.classList.add('active');
-          callThanksBlock.classList.remove('hidden');
+          const callBlock = document.querySelector('.thank-you-popup');
+          const callThanksBlock = document.querySelector('.thank-you-popup');
+          callBlock.classList.add('modal-open');
+          callThanksBlock.classList.add('modal-open');
+          callThanksBlock.classList.remove('modal-open');
         },
-        $btnSubmit: $form.querySelector('[data-btn-submit]'),
+        $btnSubmit: $form.querySelector('[data-btn-submit-footer]'),
         fields: {
           phone: {
             inputWrapper: new SexyInput({
