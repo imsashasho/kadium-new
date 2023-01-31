@@ -1,0 +1,31 @@
+:root {
+  --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
+  --header-h: 80px;
+  --logo-w: 164px;
+  --sliceFigure: 239px;
+  --sliceFigure-big: 541px;
+}
+
+@media (max-width: 1920px) {
+  :root {
+    --sliceFigure-big: 362px;
+  }
+}
+
+@media (max-width: 1366px) {
+  :root {
+    --header-h: 90px;
+    --logo-w: 148px;
+    --sliceFigure-big: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-h: 66px;
+    --logo-w: 105 px;
+    --sliceFigure: 100px;
+    --sliceFigure-big: 100px;
+  }
+}
+/*# sourceMappingURL=vars.css.map */

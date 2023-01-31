@@ -26,10 +26,10 @@ paralaxImages.forEach(image => {
     .fromTo(
       image,
       {
-        y: -30,
+        y: -25,
       },
       {
-        y: 30,
+        y: 25,
         ease: 'linear',
       },
     );

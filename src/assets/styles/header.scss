@@ -120,6 +120,23 @@
   }
   &-list-link {
 
+    &::before {
+      content: '';
+      height: 1px;
+      width: 0;
+      background-color: $mc1;
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      transition: all ease-in-out 0.5s;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+
   }
   &-call-wrap {
     display: flex;
@@ -458,6 +475,22 @@
 
     .header-list-link {
       color: $textLightGrey;
+      &::before {
+        content: '';
+        height: 1px;
+        width: 0;
+        background-color: $textLightGrey;
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        transition: all ease-in-out 0.5s;
+      }
+  
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
     }
   
     .header-number__link {

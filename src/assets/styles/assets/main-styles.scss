@@ -33,11 +33,20 @@ button {
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #E8E9E9;
+  transition: all ease-in-out 0.3s;
+
   @include tabletLarge {
     width: 184px;
     height: 50px;
     font-size: 14px;
 
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(42,44,101,1);
+      -moz-box-shadow: 0px 0px 1px 1px rgba(42,44,101,1);
+    box-shadow: 0px 0px 1px 1px rgba(42,44,101,1);
   }
 
 }
@@ -110,29 +119,6 @@ button {
   display: none;
 }
 
-
-/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
-.btn
-:focus {
-	/* Provide a fallback style for browsers
-	 that don't support :focus-visible */
-	outline: none;
-	background: lightgrey;
-}
-
-a:focus:not(:focus-visible) {
-	/* Remove the focus indicator on mouse-focus for browsers
-	 that do support :focus-visible */
-	background: transparent;
-}
-
-a:focus-visible {
-	/* Draw a very noticeable focus style for
-	 keyboard-focus on browsers that do support
-	 :focus-visible */
-	outline: 2px solid $mc1;
-	background: transparent;
-}
 
 .text {
   &-title {
