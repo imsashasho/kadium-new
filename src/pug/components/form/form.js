@@ -7,7 +7,7 @@ import { langDetect } from '../../../assets/scripts/modules/helpers/helpers';
 const sendForm = async data =>
   // const response = await axios.post('/wp-admin/admin-ajax.php', data);
   // return response.data;
-  ({ code_error: null })
+  ({ code_error: null})
 ;
 
 /*  */
@@ -177,6 +177,7 @@ export default class FormMonster {
 
   submitForm() {
     return async (e) => {
+
       /*  */
       e.preventDefault();
       this.changeInput()(e);
