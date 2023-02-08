@@ -26,31 +26,19 @@ import { successPopup } from './successPopup';
 //   formRef.addEventListener('submit', handleSubmit);
 // };
 
-export const contactForm = (formRef, onSuccess) => {
-  const btnRef = formRef.querySelector('[data-btn-submit]');
+export const contactFormFooter = (formRef, onSuccess) => {
+  const btnRef = formRef.querySelector('[data-btn-submit-footer]');
   new FormMonster({
     elements: {
       $form: formRef,
       $btnSubmit: btnRef,
       showSuccessMessage: false,
       successAction: () => {
+        console.log('open')
         successPopup.open();
         onSuccess && onSuccess();
       },
       fields: {
-        name: {
-          inputWrapper: new SexyInput({
-            animation: 'none',
-            $field: formRef.querySelector('[data-field-name]'),
-          }),
-          rule: yup
-            .string()
-            .required(i18next.t('required'))
-            .trim(),
-          defaultMessage: i18next.t('name'),
-          valid: false,
-          error: [],
-        },
         phone: {
           inputWrapper: new SexyInput({
             animation: 'none',
@@ -70,4 +58,3 @@ export const contactForm = (formRef, onSuccess) => {
     },
   });
 };
-

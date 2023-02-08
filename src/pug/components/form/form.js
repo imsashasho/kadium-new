@@ -4,11 +4,13 @@ import axios from 'axios';
 import initView from './form-view';
 import { langDetect } from '../../../assets/scripts/modules/helpers/helpers';
 
-const sendForm = async data =>
-  // const response = await axios.post('/wp-admin/admin-ajax.php', data);
-  // return response.data;
-  ({ code_error: null})
-;
+const sendForm = async (data) => {
+  const response = await axios.post('/wp-admin/admin-ajax.php', data);
+  console.log(response)
+  return response.data;
+};
+
+
 
 /*  */
 const lang = langDetect();
@@ -51,9 +53,9 @@ const lang = langDetect();
           phone: 'Телефон:*',
           send: 'Надіслати',
           sending: 'Відправлення',
-          field_too_short: 'телефон має містити принаймні {{cnt}} символів',
-          field_too_long: 'телефон має містити не більше {{cnt}} символів',
-          only_number: 'тут лише цифри',
+          field_too_short: 'Телефон має містити принаймні {{cnt}} символів',
+          field_too_long: 'Телефон має містити не більше {{cnt}} символів',
+          only_number: 'Тут лише цифри',
           required: 'Це поле є обов`язковим',
           sendingSuccessTitle: 'Повідомлення надіслано',
           sendingSuccessText: 'Чекайте відповіді наших менеджерів',
@@ -68,7 +70,7 @@ const lang = langDetect();
             'Повідомлення не було відправлено через невідому помилку сервера. Код: [front_error] ',
           invalid_upload_file: 'Помилка завантаження файлу. Код: [invalid_upload_file]',
           invalid_recaptcha: 'Заповніть капчу і спробуйте ще раз знову. Код: [invalid_recaptcha]',
-          connectionFailed: "Помилка з'єднання с CRM",
+          connectionFailed: 'Помилка з\'єднання с CRM',
         },
       },
       en: {
@@ -177,7 +179,6 @@ export default class FormMonster {
 
   submitForm() {
     return async (e) => {
-
       /*  */
       e.preventDefault();
       this.changeInput()(e);
@@ -192,7 +193,7 @@ export default class FormMonster {
           /* eslint-disable-next-line */
           const { error, code_error } = await sendForm(formData);
 
-          if (!code_error) {
+          if (error === 0) {
             this.watchedState.status = 'successSand';
             return true;
           }
