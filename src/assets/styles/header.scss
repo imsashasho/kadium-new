@@ -458,11 +458,11 @@
   color: $mc2;
 }
 
-#id-single-project,
-#id-about,
+#id-page-about-page,
 #id-home-page {
   .header {
-    background: transparent;
+    background: rgb(8,16,25);
+    background: linear-gradient(180deg, rgba(8,16,25,0.3660057773109243) 0%, rgba(8,16,25,0) 100%);
 
     &.on {
       background: $mc2;
