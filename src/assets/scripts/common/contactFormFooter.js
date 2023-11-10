@@ -34,7 +34,6 @@ export const contactFormFooter = (formRef, onSuccess) => {
       $btnSubmit: btnRef,
       showSuccessMessage: false,
       successAction: () => {
-        console.log('open')
         successPopup.open();
         onSuccess && onSuccess();
       },
