@@ -1,0 +1,316 @@
+.loyalty {
+  &-row {
+    width: 100%;
+    display: grid;
+    grid-template: 336px / repeat(auto-fill, minmax(322px, 1fr));
+    grid-auto-rows: minmax(238px, 352px);
+    grid-auto-columns: 336px;
+    @media (max-width: 768px) {
+      grid-template: repeat(2, minmax(238px, 336px)) / repeat(2, minmax(160px, 1fr));
+      grid-auto-columns: 336px;
+    }
+    @media (max-width: 568px) {
+      grid-template-rows: repeat(2, 238px);
+      grid-auto-rows: 238px;
+    }
+  }
+  &-item {
+    width: 100%;
+    border: 1px solid $mc2;
+    transition: background-color 0.5s ease;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      .loyalty-item-img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+        @media (max-width: 568px) {
+          width: 140px;
+          height: 140px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      h3 {
+        font-size: 16px;
+        color: $bc;
+        letter-spacing: -1px;
+        text-align: center;
+        line-height: 1.2;
+        text-transform: uppercase;
+        @media (max-width: 500px) {
+          max-width: 140px;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: $mc2;
+    }
+  }
+  &-info-row {
+    display: grid;
+    grid-template: repeat(2, minmax(866px, 1fr)) / repeat(auto-fill, minmax(700px, 1fr));
+    grid-auto-columns: 880px;
+    border: 12px solid $mc2;
+    @media (max-width: 768px) {
+      grid-template: auto / minmax(300px, 1fr);
+      grid-auto-rows: auto;
+    }
+    @media (max-width: 500px) {
+      border-width: 6px;
+    }
+    .info-card {
+      padding: 28px 28px 80px 28px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      gap: 40px;
+      border: 1px solid $mc2;
+      border-top: 0;
+      @media (max-width: 1585px) {
+        justify-content: center;
+        gap: 40px;
+      }
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding-bottom: 59px;
+      }
+      @media (max-width: 500px) {
+        padding: 14px;
+        padding-bottom: 60px;
+        border: none;
+        border-top: 1px solid $mc2;
+        border-bottom: 1px solid $mc2;
+      }
+      &-poster {
+        display: flex;
+        flex-direction: column;
+        max-width: 250px;
+        height: 332px;
+        &__img {
+          width: 100%;
+          height: 250px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        &__desc {
+          padding: 12px 20px;
+          display: flex;
+          gap: 10px;
+          background-color: $mc1;
+          svg {
+            fill: $mc2;
+            width: 16px;
+            height: 23px;
+          }
+          p {
+            font-size: 24px;
+            color: $wc;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+          }
+        }
+        @media (max-width: 768px) {
+          max-width: 320px;
+        }
+      }
+      &-desc {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        max-width: 470px;
+        width: 100%;
+        @media (max-width: 1600px) {
+          max-width: 400px;
+        }
+      }
+      &-header {
+        color: $bc;
+        h2 {
+          margin-bottom: 12px;
+          font-size: 32px;
+          line-height: 1.2;
+          text-transform: uppercase;
+        }
+        p {
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 1.2;
+        }
+      }
+      &-banner {
+        padding: 28px 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px;
+        border-top: 1px solid $mc2;
+        border-bottom: 1px solid $mc2;
+        .inner {
+          max-width: 225px;
+          width: 100%;
+          height: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 6px;
+          line-height: 1.2;
+          letter-spacing: -1px;
+          span {
+            font-size: 20px;
+            font-weight: 400;
+          }
+          address {
+            max-width: 171px;
+            font-size: 19px;
+            font-weight: 400;
+            @media (max-width: 1585px) {
+              font-size: 20px;
+            }
+          }
+        }
+        .logo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          #change-color {
+            max-width: 110px;
+
+            height: 30px;
+            fill: $mc1 !important;
+            transition: all ease-in-out 0.4s;
+          }
+        }
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          max-width: 225px;
+          width: 100%;
+          height: 48px;
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: 500;
+          color: inherit;
+          background-color: $mc2;
+          transition: background-color 0.3s ease;
+          &:hover {
+            background-color: transparentize($mc2, 0.2);
+          }
+        }
+      }
+      &-main-banner {
+        @extend .info-card-banner;
+        @media (max-width: 500px) {
+          flex-direction: column;
+          gap: 20px;
+          .inner {
+            max-width: 100%;
+            justify-content: flex-start;
+            address {
+              max-width: 300px;
+            }
+          }
+          a {
+            max-width: 100%;
+          }
+        }
+      }
+      &-specialty {
+        h3 {
+          margin-bottom: 12px;
+          font-size: 20px;
+          font-weight: 450;
+        }
+        .specialty-inner {
+          display: flex;
+          gap: 20px;
+        }
+        .specialty-list {
+          max-width: 225px;
+          width: 100%;
+          li {
+            margin-bottom: 7px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            letter-spacing: -1px;
+            &:before {
+              content: '';
+              display: block;
+              top: 0;
+              left: 0;
+              width: 3px;
+              height: 3px;
+              background-color: $bc;
+              border-radius: 50%;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+      &-footer {
+        p {
+          margin-bottom: 12px;
+          font-size: 20px;
+          line-height: 1.2;
+        }
+        .footer-inner {
+          @extend .info-card-banner;
+          padding: 0;
+          border-top: 0;
+          border-bottom: 0;
+          @media (max-width: 500px) {
+            flex-direction: column;
+            gap: 20px;
+            .inner {
+              max-width: 100%;
+            }
+          }
+          .inner {
+            justify-content: flex-start;
+          }
+          a {
+            color: $wc;
+            background-color: $mc1;
+            transition: background-color 0.5s ease;
+            &:hover {
+              background-color: transparentize($mc1, 0.1);
+            }
+            @media (max-width: 500px) {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .banner-icon {
+    max-width: 42px;
+    width: 100%;
+    height: 42px;
+    fill: none;
+  }
+}

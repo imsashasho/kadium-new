@@ -7,7 +7,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     color: $wc;
-    width: 122px;
+    width: 136px;
+    // width: 122px;
     &:nth-last-child(2) {
       pointer-events: none;
       cursor: none;
@@ -27,14 +28,14 @@
     line-height: 120%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #F0F0F0;
+    color: #f0f0f0;
     z-index: 1;
     padding-left: 10px;
     padding-right: 10px;
     transition: all ease-in-out 0.3s;
     @include mobile {
       font-size: 10px;
-    } 
+    }
 
     &::before {
       content: '';
@@ -60,17 +61,15 @@
   &-item__link-home {
     padding-left: 0;
     width: fit-content;
-      &::before {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 10px;
-        width: 1px;
-        background-color: transparent;
-      }
-
-
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 10px;
+      width: 1px;
+      background-color: transparent;
+    }
   }
   &-list {
     display: flex;
@@ -88,7 +87,6 @@
     font-size: 10px;
   }
   &-item {
-    
     &:last-child {
       display: none;
     }
