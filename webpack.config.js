@@ -9,6 +9,7 @@ const config = {
     about: './src/assets/scripts/about/index.js',
     news: './src/assets/scripts/news/index.js',
     singleProject: './src/assets/scripts/singleProject/index.js',
+    loyalty: './src/assets/scripts/loyalty/index.js',
   },
   output: {
     filename: '[name].bundle.js',

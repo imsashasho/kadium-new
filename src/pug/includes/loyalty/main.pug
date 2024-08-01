@@ -40,10 +40,7 @@
             title: 'Електроніка',
             img: './assets/images/loyalty/loyalty-card_10.jpg'
         },
-    ]
-
-    var cards2 = [
-        {
+                {
             title: 'Штори, жалюзі ролети',
             img: './assets/images/loyalty/loyalty-card_11.jpg'
         },
@@ -68,142 +65,328 @@ section.loyalty
             block breadcrumbs
                 include ../breadcrumbs.pug
         ul.loyalty-row
+            li.loyalty-item__list
+                ul.loyalty-info-row
+                    li.info-card
+                        .info-card-poster
+                            .info-card-poster__img
+                                img(src="../assets/images/loyalty/loyalty-poster.jpg", alt="benefits")
+                            .info-card-poster__desc
+                                +svg('loyalty-poster__icon')
+                                p знижка від партнера 10%
+                        .info-card-desc
+                            .info-card-header
+                                h2 Кадіум Девелопмент
+                                p Компанія "Кадіум" спеціалізується на виготовленні високоякісних меблів для дому та офісу. Використовуємо найкращі матеріали та новітні технології, щоб забезпечити комфорт і довговічність кожного виробу. 
+                            .info-card-banner
+                                .inner
+                                    .logo
+                                        +svg('logo')#change-color
+                                a.btn-hover__light(href='index.html') 
+                                    span Сайт компанії
+                            .info-card-specialty
+                                h3 Ми спеціалізуємось на:
+                                .specialty-inner
+                                    ul.specialty-list
+                                        li Дивани
+                                        li Крісла
+                                        li Комоди
+                                        li Ліжка
+                                    ul.specialty-list
+                                        li Дивани
+                                        li Крісла
+                                        li Комоди
+                                        li Ліжка
+                            .info-card-main-banner
+                                .inner
+                                    +svg('loyalty-location').banner-icon
+                                    address м. Кропивницький, вул. Чорновола, 4
+                                a.btn-hover__light(href='#') 
+                                    span Відкрити у навігаторі
+                            .info-card-footer
+                                p Замовляйте безкоштовний прорахунок для вашого індивідуального проєкту та дізнайтеся найвигідніші для себе умови
+                                .footer-inner
+                                    .inner
+                                        +svg('loyalty-phone').banner-icon
+                                        span (099) 284 7777
+                                    button.btn-hover__dark
+                                        span Зворотній дзвінок
+                    li.info-card
+                        .info-card-poster
+                            .info-card-poster__img
+                                img(src="../assets/images/loyalty/loyalty-poster.jpg", alt="benefits")
+                            .info-card-poster__desc
+                                +svg('loyalty-poster__icon')
+                                p знижка від партнера 10%
+                        .info-card-desc
+                            .info-card-header
+                                h2 Кадіум Девелопмент
+                                p Компанія "Кадіум" спеціалізується на виготовленні високоякісних меблів для дому та офісу. Використовуємо найкращі матеріали та новітні технології, щоб забезпечити комфорт і довговічність кожного виробу. 
+                            .info-card-banner
+                                .inner
+                                    .logo
+                                        +svg('logo')#change-color
+                                a.btn-hover__light(href='index.html') 
+                                    span Сайт компанії
+                            .info-card-specialty
+                                h3 Ми спеціалізуємось на:
+                                .specialty-inner
+                                    ul.specialty-list
+                                        li Дивани
+                                        li Крісла
+                                        li Комоди
+                                        li Ліжка
+                                    ul.specialty-list
+                                        li Дивани
+                                        li Крісла
+                                        li Комоди
+                                        li Ліжка
+                            .info-card-main-banner
+                                .inner
+                                    +svg('loyalty-location').banner-icon
+                                    address м. Кропивницький, вул. Чорновола, 4
+                                a.btn-hover__light(href='#') 
+                                    span Відкрити у навігаторі
+                            .info-card-footer
+                                p Замовляйте безкоштовний прорахунок для вашого індивідуального проєкту та дізнайтеся найвигідніші для себе умови
+                                .footer-inner
+                                    .inner
+                                        +svg('loyalty-phone').banner-icon
+                                        span (099) 284 7777
+                                    button.btn-hover__dark
+                                        span Зворотній дзвінок
+                    li.info-card
+                        .info-card-poster
+                            .info-card-poster__img
+                                img(src="../assets/images/loyalty/loyalty-poster.jpg", alt="benefits")
+                            .info-card-poster__desc
+                                +svg('loyalty-poster__icon')
+                                p знижка від партнера 10%
+                        .info-card-desc
+                            .info-card-header
+                                h2 Кадіум Девелопмент
+                                p Компанія "Кадіум" спеціалізується на виготовленні високоякісних меблів для дому та офісу. Використовуємо найкращі матеріали та новітні технології, щоб забезпечити комфорт і довговічність кожного виробу. 
+                            .info-card-banner
+                                .inner
+                                    .logo
+                                        +svg('logo')#change-color
+                                a.btn-hover__light(href='index.html') 
+                                    span Сайт компанії
+                            .info-card-specialty
+                                h3 Ми спеціалізуємось на:
+                                .specialty-inner
+                                    ul.specialty-list
+                                        li Дивани
+                                        li Крісла
+                                        li Комоди
+                                        li Ліжка
+                                    ul.specialty-list
+                                        li Дивани
+                                        li Крісла
+                                        li Комоди
+                                        li Ліжка
+                            .info-card-main-banner
+                                .inner
+                                    +svg('loyalty-location').banner-icon
+                                    address м. Кропивницький, вул. Чорновола, 4
+                                a.btn-hover__light(href='#') 
+                                    span Відкрити у навігаторі
+                            .info-card-footer
+                                p Замовляйте безкоштовний прорахунок для вашого індивідуального проєкту та дізнайтеся найвигідніші для себе умови
+                                .footer-inner
+                                    .inner
+                                        +svg('loyalty-phone').banner-icon
+                                        span (099) 284 7777
+                                    button.btn-hover__dark
+                                        span Зворотній дзвінок
+                    li.info-card
+                        .info-card-poster
+                            .info-card-poster__img
+                                img(src="../assets/images/loyalty/loyalty-poster.jpg", alt="benefits")
+                            .info-card-poster__desc
+                                +svg('loyalty-poster__icon')
+                                p знижка від партнера 10%
+                        .info-card-desc
+                            .info-card-header
+                                h2 Кадіум Девелопмент
+                                p Компанія "Кадіум" спеціалізується на виготовленні високоякісних меблів для дому та офісу. Використовуємо найкращі матеріали та новітні технології, щоб забезпечити комфорт і довговічність кожного виробу. 
+                            .info-card-banner
+                                .inner
+                                    .logo
+                                        +svg('logo')#change-color
+                                a.btn-hover__light(href='index.html') 
+                                    span Сайт компанії
+                            .info-card-specialty
+                                h3 Ми спеціалізуємось на:
+                                .specialty-inner
+                                    ul.specialty-list
+                                        li Дивани
+                                        li Крісла
+                                        li Комоди
+                                        li Ліжка
+                                    ul.specialty-list
+                                        li Дивани
+                                        li Крісла
+                                        li Комоди
+                                        li Ліжка
+                            .info-card-main-banner
+                                .inner
+                                    +svg('loyalty-location').banner-icon
+                                    address м. Кропивницький, вул. Чорновола, 4
+                                a.btn-hover__light(href='#') 
+                                    span Відкрити у навігаторі
+                            .info-card-footer
+                                p Замовляйте безкоштовний прорахунок для вашого індивідуального проєкту та дізнайтеся найвигідніші для себе умови
+                                .footer-inner
+                                    .inner
+                                        +svg('loyalty-phone').banner-icon
+                                        span (099) 284 7777
+                                    button.btn-hover__dark
+                                        span Зворотній дзвінок
+                    li.info-card
+                        .info-card-poster
+                            .info-card-poster__img
+                                img(src="../assets/images/loyalty/loyalty-poster.jpg", alt="benefits")
+                            .info-card-poster__desc
+                                +svg('loyalty-poster__icon')
+                                p знижка від партнера 10%
+                        .info-card-desc
+                            .info-card-header
+                                h2 Кадіум Девелопмент
+                                p Компанія "Кадіум" спеціалізується на виготовленні високоякісних меблів для дому та офісу. Використовуємо найкращі матеріали та новітні технології, щоб забезпечити комфорт і довговічність кожного виробу. 
+                            .info-card-banner
+                                .inner
+                                    .logo
+                                        +svg('logo')#change-color
+                                a.btn-hover__light(href='index.html') 
+                                    span Сайт компанії
+                            .info-card-specialty
+                                h3 Ми спеціалізуємось на:
+                                .specialty-inner
+                                    ul.specialty-list
+                                        li Дивани
+                                        li Крісла
+                                        li Комоди
+                                        li Ліжка
+                                    ul.specialty-list
+                                        li Дивани
+                                        li Крісла
+                                        li Комоди
+                                        li Ліжка
+                            .info-card-main-banner
+                                .inner
+                                    +svg('loyalty-location').banner-icon
+                                    address м. Кропивницький, вул. Чорновола, 4
+                                a.btn-hover__light(href='#') 
+                                    span Відкрити у навігаторі
+                            .info-card-footer
+                                p Замовляйте безкоштовний прорахунок для вашого індивідуального проєкту та дізнайтеся найвигідніші для себе умови
+                                .footer-inner
+                                    .inner
+                                        +svg('loyalty-phone').banner-icon
+                                        span (099) 284 7777
+                                    button.btn-hover__dark
+                                        span Зворотній дзвінок
             each card in cards
+
+
+
+
+
                 li.loyalty-item
-                    a(href="#")
+                    button
                         .loyalty-item-img
                             img(src= card.img, alt= card.title)
                         h3= card.title
+        //- ul.loyalty-info-row
+        //-     li.info-card
+        //-         .info-card-poster
+        //-             .info-card-poster__img
+        //-                 img(src="../assets/images/loyalty/loyalty-poster.jpg", alt="benefits")
+        //-             .info-card-poster__desc
+        //-                 +svg('loyalty-poster__icon')
+        //-                 p знижка від партнера 10%
+        //-         .info-card-desc
+        //-             .info-card-header
+        //-                 h2 Кадіум Девелопмент
+        //-                 p Компанія "Кадіум" спеціалізується на виготовленні високоякісних меблів для дому та офісу. Використовуємо найкращі матеріали та новітні технології, щоб забезпечити комфорт і довговічність кожного виробу. 
+        //-             .info-card-banner
+        //-                 .inner
+        //-                     .logo
+        //-                         +svg('logo')#change-color
+        //-                 a.btn-hover__light(href='index.html') 
+        //-                     span Сайт компанії
+        //-             .info-card-specialty
+        //-                 h3 Ми спеціалізуємось на:
+        //-                 .specialty-inner
+        //-                     ul.specialty-list
+        //-                         li Дивани
+        //-                         li Крісла
+        //-                         li Комоди
+        //-                         li Ліжка
+        //-                     ul.specialty-list
+        //-                         li Дивани
+        //-                         li Крісла
+        //-                         li Комоди
+        //-                         li Ліжка
+        //-             .info-card-main-banner
+        //-                 .inner
+        //-                     +svg('loyalty-location').banner-icon
+        //-                     address м. Кропивницький, вул. Чорновола, 4
+        //-                 a.btn-hover__light(href='#') 
+        //-                     span Відкрити у навігаторі
+        //-             .info-card-footer
+        //-                 p Замовляйте безкоштовний прорахунок для вашого індивідуального проєкту та дізнайтеся найвигідніші для себе умови
+        //-                 .footer-inner
+        //-                     .inner
+        //-                         +svg('loyalty-phone').banner-icon
+        //-                         span (099) 284 7777
+        //-                     button.btn-hover__dark
+        //-                         span Зворотній дзвінок
 
-        ul.loyalty-info-row
-            li.info-card
-                .info-card-poster
-                    .info-card-poster__img
-                        img(src="../assets/images/loyalty/loyalty-poster.jpg", alt="benefits")
-                    .info-card-poster__desc
-                        +svg('loyalty-poster__icon')
-                        p знижка від партнера 10%
-                .info-card-desc
-                    .info-card-header
-                        h2 Кадіум Девелопмент
-                        p Компанія "Кадіум" спеціалізується на виготовленні високоякісних меблів для дому та офісу. Використовуємо найкращі матеріали та новітні технології, щоб забезпечити комфорт і довговічність кожного виробу. 
-                    .info-card-banner
-                        .inner
-                            .logo
-                                +svg('logo')#change-color
-                        a(href='index.html') Сайт компанії
-                    .info-card-specialty
-                        h3 Ми спеціалізуємось на:
-                        .specialty-inner
-                            ul.specialty-list
-                                li Дивани
-                                li Крісла
-                                li Комоди
-                                li Ліжка
-                            ul.specialty-list
-                                li Дивани
-                                li Крісла
-                                li Комоди
-                                li Ліжка
-                    .info-card-main-banner
-                        .inner
-                            +svg('loyalty-location').banner-icon
-                            address м. Кропивницький, вул. Чорновола, 4
-                        a(href='#') Відкрити у навігаторі
-                    .info-card-footer
+    //- li.loyalty-item__list
+    //-     ul.loyalty-info-row
+    //-         li.info-card
+    //-             .info-card-poster
+    //-                 .info-card-poster__img
+    //-                     img(src="../assets/images/loyalty/loyalty-poster.jpg", alt="benefits")
+    //-                 .info-card-poster__desc
+    //-                     +svg('loyalty-poster__icon')
+    //-                     p знижка від партнера 10%
+    //-             .info-card-desc
+    //-                 .info-card-header
+    //-                     h2 Кадіум Девелопмент
+    //-                     p Компанія "Кадіум" спеціалізується на виготовленні високоякісних меблів для дому та офісу. Використовуємо найкращі матеріали та новітні технології, щоб забезпечити комфорт і довговічність кожного виробу. 
+    //-                 .info-card-banner
+    //-                     .inner
+    //-                         .logo
+    //-                             +svg('logo')#change-color
+    //-                     a.btn-hover__light(href='index.html') 
+    //-                         span Сайт компанії
+    //-                 .info-card-specialty
+    //-                     h3 Ми спеціалізуємось на:
+    //-                     .specialty-inner
+    //-                         ul.specialty-list
+    //-                             li Дивани
+    //-                             li Крісла
+    //-                             li Комоди
+    //-                             li Ліжка
+    //-                         ul.specialty-list
+    //-                             li Дивани
+    //-                             li Крісла
+    //-                             li Комоди
+    //-                             li Ліжка
+    //-                 .info-card-main-banner
+    //-                     .inner
+    //-                         +svg('loyalty-location').banner-icon
+    //-                         address м. Кропивницький, вул. Чорновола, 4
+    //-                     a.btn-hover__light(href='#') 
+    //-                         span Відкрити у навігаторі
+    //-                 .info-card-footer
                         p Замовляйте безкоштовний прорахунок для вашого індивідуального проєкту та дізнайтеся найвигідніші для себе умови
                         .footer-inner
                             .inner
                                 +svg('loyalty-phone').banner-icon
                                 span (099) 284 7777
-                            a(href='tel:+380992847777') Зворотний дзвінок
-            li.info-card
-                .info-card-poster
-                    .info-card-poster__img
-                        img(src="../assets/images/loyalty/loyalty-poster.jpg", alt="benefits")
-                    .info-card-poster__desc
-                        +svg('loyalty-poster__icon')
-                        p знижка від партнера 10%
-                .info-card-desc
-                    .info-card-header
-                        h2 Кадіум Девелопмент
-                        p Компанія "Кадіум" спеціалізується на виготовленні високоякісних меблів для дому та офісу. Використовуємо найкращі матеріали та новітні технології, щоб забезпечити комфорт і довговічність кожного виробу. 
-                    .info-card-banner
-                        .inner
-                            .logo
-                                +svg('logo')#change-color
-                        a(href='index.html') Сайт компанії
-                    .info-card-specialty
-                        h3 Ми спеціалізуємось на:
-                        .specialty-inner
-                            ul.specialty-list
-                                li Дивани
-                                li Крісла
-                                li Комоди
-                                li Ліжка
-                            ul.specialty-list
-                                li Дивани
-                                li Крісла
-                                li Комоди
-                                li Ліжка
-                    .info-card-main-banner
-                        .inner
-                            +svg('loyalty-location').banner-icon
-                            address м. Кропивницький, вул. Чорновола, 4
-                        a(href='#') Відкрити у навігаторі
-                    .info-card-footer
-                        p Замовляйте безкоштовний прорахунок для вашого індивідуального проєкту та дізнайтеся найвигідніші для себе умови
-                        .footer-inner
-                            .inner
-                                +svg('loyalty-phone').banner-icon
-                                span (099) 284 7777
-                            a(href='tel:+380992847777') Зворотний дзвінок
-            li.info-card
-                .info-card-poster
-                    .info-card-poster__img
-                        img(src="../assets/images/loyalty/loyalty-poster.jpg", alt="benefits")
-                    .info-card-poster__desc
-                        +svg('loyalty-poster__icon')
-                        p знижка від партнера 10%
-                .info-card-desc
-                    .info-card-header
-                        h2 Кадіум Девелопмент
-                        p Компанія "Кадіум" спеціалізується на виготовленні високоякісних меблів для дому та офісу. Використовуємо найкращі матеріали та новітні технології, щоб забезпечити комфорт і довговічність кожного виробу. 
-                    .info-card-banner
-                        .inner
-                            .logo
-                                +svg('logo')#change-color
-                        a(href='index.html') Сайт компанії
-                    .info-card-specialty
-                        h3 Ми спеціалізуємось на:
-                        .specialty-inner
-                            ul.specialty-list
-                                li Дивани
-                                li Крісла
-                                li Комоди
-                                li Ліжка
-                            ul.specialty-list
-                                li Дивани
-                                li Крісла
-                                li Комоди
-                                li Ліжка
-                    .info-card-main-banner
-                        .inner
-                            +svg('loyalty-location').banner-icon
-                            address м. Кропивницький, вул. Чорновола, 4
-                        a(href='#') Відкрити у навігаторі
-                    .info-card-footer
-                        p Замовляйте безкоштовний прорахунок для вашого індивідуального проєкту та дізнайтеся найвигідніші для себе умови
-                        .footer-inner
-                            .inner
-                                +svg('loyalty-phone').banner-icon
-                                span (099) 284 7777
-                            a(href='tel:+380992847777') Зворотний дзвінок
-
-        ul.loyalty-row
-            each card in cards2
-                li.loyalty-item
-                    a(href="#")
-                        .loyalty-item-img
-                            img(src= card.img, alt= card.title)
-                        h3= card.title
+                            button.btn-hover__dark
+                                span Зворотній дзвінок
