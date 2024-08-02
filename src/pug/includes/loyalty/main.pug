@@ -287,13 +287,13 @@ section.loyalty
                                         span (099) 284 7777
                                     button.btn-hover__dark
                                         span Зворотній дзвінок
-            each card in cards
+            each card, index in cards
 
 
 
 
 
-                li.loyalty-item
+                li.loyalty-item(data-index=index)
                     button
                         .loyalty-item-img
                             img(src= card.img, alt= card.title)
