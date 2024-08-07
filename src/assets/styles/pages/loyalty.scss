@@ -8,19 +8,27 @@
     border-left: 1px solid $mc2;
     border-top: 1px solid $mc2;
     @media (max-width: 768px) {
-      grid-template: repeat(2, minmax(238px, 336px)) / repeat(2, minmax(160px, 1fr));
-      grid-auto-columns: 336px;
+      grid-template: minmax(238px, 1fr) / repeat(2, minmax(170px, 1fr));
+      // grid-auto-columns: 336px;
     }
-    @media (max-width: 568px) {
-      grid-template-rows: repeat(2, 238px);
-      grid-auto-rows: 238px;
-    }
+    // @media (max-width: 568px) {
+    //   grid-template-rows: repeat(2, 238px);
+    //   // grid-auto-rows: 238px;
+    // }
   }
   &-item {
+    padding: 40px 0;
     width: 100%;
+    cursor: pointer;
     border-right: 1px solid $mc2;
     border-bottom: 1px solid $mc2;
     transition: background-color 0.5s ease;
+    @media (max-width: 768px) {
+      padding: 40px 0;
+    }
+    @media (max-width: 480px) {
+      padding: 20px 0 10px 0;
+    }
     &__list {
       display: none;
       // grid-column-start: 1;
@@ -64,16 +72,26 @@
         }
       }
     }
-
-    &:hover {
-      background-color: #f3f3fb;
-      // $mc2
-      button {
-        img {
-          transform: scale(1.05);
+    @media (hover: hover) {
+      &:hover {
+        background-color: #f3f3fb;
+        // $mc2
+        button {
+          img {
+            transform: scale(1.05);
+          }
         }
       }
     }
+    // &:hover {
+    //   background-color: #f3f3fb;
+    //   // $mc2
+    //   button {
+    //     img {
+    //       transform: scale(1.05);
+    //     }
+    //   }
+    // }
     &__active {
       transition: background-color 0.3s ease;
       background-color: $mc2 !important;
@@ -86,9 +104,19 @@
   }
   &-info-row {
     display: grid;
-    grid-template: repeat(auto-fill, minmax(866px, 1fr)) / repeat(auto-fill, minmax(700px, 1fr));
+    grid-template: repeat(auto-fill, minmax(866px, 1fr)) / repeat(auto-fill, minmax(950px, 1fr));
     grid-auto-columns: 880px;
     border: 12px solid $mc2;
+    @media (max-width: 3035px) {
+      grid-template: repeat(auto-fill, minmax(866px, 1fr)) / repeat(auto-fill, minmax(700px, 1fr));
+    }
+    @media (max-width: 1585px) {
+      grid-template: repeat(auto-fill, minmax(866px, 1fr)) / repeat(auto-fill, minmax(500px, 1fr));
+    }
+    @media (max-width: 1400px) {
+      grid-template: repeat(auto-fill, minmax(866px, 1fr)) / repeat(2, 1fr);
+    }
+
     @media (max-width: 768px) {
       grid-template: auto / minmax(300px, 1fr);
       grid-auto-rows: auto;
@@ -100,14 +128,24 @@
       padding: 28px 28px 80px 28px;
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       gap: 40px;
       border-bottom: 1px solid $mc2;
       border-right: 1px solid $mc2;
+      @media (max-width: 3035px) {
+        justify-content: space-between;
+      }
       @media (max-width: 1585px) {
         justify-content: center;
-        gap: 40px;
+        gap: 20px;
       }
+      @media (max-width: 1400px) {
+        flex-direction: column;
+      }
+      // @media (max-width: 1585px) {
+      //   justify-content: center;
+      //   gap: 40px;
+      // }
       @media (max-width: 768px) {
         flex-direction: column;
         align-items: center;
@@ -147,12 +185,19 @@
             height: 23px;
           }
           p {
-            font-size: 24px;
             color: $wc;
             line-height: 1.2;
             letter-spacing: -1px;
+            font-size: 18px;
             text-transform: uppercase;
+            @media (min-width: 1400px) {
+              font-size: 24px;
+            }
           }
+        }
+        @media (max-width: 1400px) {
+          max-width: 100%;
+          height: 302px;
         }
         @media (max-width: 768px) {
           max-width: 320px;
@@ -172,12 +217,15 @@
           font-size: 32px;
           line-height: 1.2;
           letter-spacing: -1px;
-          font-weight: 450;
+          font-weight: 400;
           text-transform: uppercase;
+          @media (max-width: 400px) {
+            font-size: 30px;
+          }
         }
         p {
           font-size: 20px;
-          font-weight: 400;
+          font-weight: 300;
           line-height: 1.2;
         }
       }
@@ -208,6 +256,18 @@
             max-width: 371px;
             font-size: 20px;
             font-weight: 400;
+          }
+          @media (max-width: 1560px) {
+            address,
+            span {
+              font-size: 18px;
+            }
+          }
+          @media (max-width: 1400px) {
+            address,
+            span {
+              font-size: 20px;
+            }
           }
         }
         .logo {
@@ -243,7 +303,7 @@
       }
       &-main-banner {
         @extend .info-card-banner;
-        @media (max-width: 500px) {
+        @media (max-width: 900px) {
           flex-direction: column;
           gap: 20px;
           .inner {
@@ -277,7 +337,7 @@
             align-items: center;
             gap: 12px;
             font-size: 20px;
-            font-weight: 400;
+            font-weight: 300;
             letter-spacing: -1px;
             &:before {
               content: '';
@@ -300,13 +360,17 @@
           margin-bottom: 12px;
           font-size: 20px;
           line-height: 1.2;
-          font-weight: 450;
+          font-weight: 300;
         }
         .footer-inner {
           @extend .info-card-banner;
           padding: 0;
           border-top: 0;
           border-bottom: 0;
+          @media (max-width: 900px) {
+            flex-wrap: wrap;
+            max-width: 100%;
+          }
           @media (max-width: 500px) {
             flex-direction: column;
             gap: 20px;
@@ -331,6 +395,9 @@
     position: relative;
     transform: translateZ(0);
     overflow: hidden;
+    @media (max-width: 900px) {
+      max-width: 600px !important;
+    }
     background: $bc !important;
     transition: background-color 0.5s ease;
     span {
@@ -341,14 +408,21 @@
       content: '';
       position: absolute;
       top: 0;
-      left: -10%;
+      // left: -10%;
+      // width: 120%;
+      // height: 100%;
       background: $mc1;
-      width: 120%;
-      height: 100%;
+      left: -20%;
+      width: 220%;
+      height: 200%;
       transform: skew(30deg);
       transition: transform 0.6s cubic-bezier(0.3, 1, 0.8, 1);
       @media (max-width: 500px) {
-        max-width: 100%;
+        // max-width: 100%;
+        left: -9%;
+        max-width: 610px;
+        width: 100vw;
+        height: 200%;
       }
     }
     &:hover {

@@ -5,10 +5,10 @@ const popupWithLi = document.querySelector('.loyalty-item__list');
 const popupList = document.querySelector('.loyalty-info-row');
 
 cardsContainer.addEventListener('click', e => {
+  e.stopPropagation();
   const activeCard = e.target.closest('.loyalty-item');
 
   if (!activeCard) return;
-
   if (activeCard.classList.contains('loyalty-item__active')) {
     activeCard.classList.remove('loyalty-item__active');
     popupWithLi.style.display = 'none';
@@ -17,11 +17,12 @@ cardsContainer.addEventListener('click', e => {
   const $container = document.querySelector('.loyalty-row');
   const $cards = $container.querySelectorAll('.loyalty-item');
 
-  
   const indexOfActiveCard = Array.from(cards).indexOf(activeCard);
   const $popup = $container.querySelector('.loyalty-item__list');
-  
-  const howManyCardsInRow = Math.round(getComputedStyle($container).gridTemplateColumns.split(' ').length);
+
+  const howManyCardsInRow = Math.round(
+    getComputedStyle($container).gridTemplateColumns.split(' ').length,
+  );
 
   const inWhichRowIsActiveCard = Math.ceil((indexOfActiveCard + 1) / howManyCardsInRow);
 
@@ -31,7 +32,7 @@ cardsContainer.addEventListener('click', e => {
   if (isLastRow) {
     $container.insertAdjacentElement('beforeend', $popup);
   } else {
-    const $nextCard = $cards[rowEnd-1];
+    const $nextCard = $cards[rowEnd - 1];
     $nextCard.insertAdjacentElement('afterend', $popup);
   }
 
@@ -44,23 +45,12 @@ cardsContainer.addEventListener('click', e => {
   $cards.forEach(card => card.classList.remove('loyalty-item__active'));
 
   activeCard.classList.add('loyalty-item__active');
-
-  console.log(getComputedStyle($container).gridTemplateColumns.split(' '));
-  console.log('isLastRow', isLastRow);
-  console.log('rowEnd', rowEnd);
-  console.log('howManyCardsInRow', howManyCardsInRow);
-  console.log('inWhichRowIsActiveCard', inWhichRowIsActiveCard);
-  
-  console.log('indexOfActiveCard:', indexOfActiveCard);
-
-  
-  
-
 });
 
-
 window.addEventListener('resize', () => {
-  document.querySelectorAll('.loyalty-item__active').forEach(card => {
-    card.click();
-  });
+  if (window.innerWidth > 600) {
+    document.querySelectorAll('.loyalty-item__active').forEach(card => {
+      card.click();
+    });
+  }
 });
