@@ -75,13 +75,19 @@
 section.loyalty
     .main-intro
         .main-intro__inner
-            //- .main-intro__img
-            //-     img(src="./assets/images/loyalty/bg-desk.jpg", alt="loyalty cards")
+            .main-intro__img
+                <picture>
+                    //- <source srcset="./assets/images/loyalty/loyalty-card_4.jpg" media="(min-width: 300px)">
+                    <source srcset="./assets/images/loyalty/bg-mob.jpg" media="(max-width: 1000px)">
+                    <img src="./assets/images/loyalty/bg-desk.jpg" alt="Альтернативний текст" class="loyalty cards">
+                    //- img(src="./assets/images/loyalty/bg-desk.jpg", alt="loyalty cards")
+                </picture>
+                //- img(src="./assets/images/loyalty/bg-desk.jpg", alt="loyalty cards")
             .main-intro__row
                 h1.main-intro__title.text-title Карта лояльності
                 block breadcrumbs
                     include ../breadcrumbs.pug
-            h2.main-text__title Вітаємо у сім'ї Kadium
+            h2.main-text__title Вітаємо у  <br> сім'ї Kadium
             .main-row
                 h3.main-row__title KADIUM CLUB
                 p Вдячність за ваш вибір та довіру — наш головний пріоритет! З картою лояльності "KADIUM CLUB" ви отримуєте унікальні переваги та привілеї, які роблять вашу інвестицію в новий дім ще вигіднішою.
@@ -233,4 +239,3 @@ section.loyalty
                         .loyalty-item-img
                             img(src= card.img, alt= card.title)
                         h3= card.title
-                                span Зворотній дзвінок
