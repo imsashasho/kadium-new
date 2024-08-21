@@ -1,17 +1,15 @@
 $default-font: 'Futura PT', sans-serif;
 $default-font2: 'montser', sans-serif;
 
-$mc1: #2A2C65;
-$mc2: #EBEBF2;
-$textGrey: #B4C4D5;
-$textLightGrey: #E8E9E9;
+$mc1: #2a2c65;
+$mc2: #ebebf2;
+$textGrey: #b4c4d5;
+$textLightGrey: #e8e9e9;
 $textGreySpecial: #939598;
-$textCardGrey: #7C8692;
+$textCardGrey: #7c8692;
 $wc: #fff;
 $bc: #081019;
 $bc2: #0e0e0e;
-
-
 
 $mc: #1a2941;
 
@@ -43,10 +41,6 @@ $md: 1920px;
   }
 }
 
-
-
-
-
 :root {
   --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
   --header-h: 80px;
@@ -62,7 +56,6 @@ $md: 1920px;
     --header-h: 90px;
     --logo-w: 148px;
     --sliceFigure-big: 44px;
-
   }
 
   @include mobile {

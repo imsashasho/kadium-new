@@ -31,6 +31,8 @@
 
   &-item__link {
     position: relative;
+    display: block;
+    height: 100%;
     text-decoration: none;
     font-family: $default-font;
     font-style: normal;

@@ -1,58 +1,61 @@
 @mixin font-face($font-family, $url, $weight: normal, $style: normal, $asset-pipeline: false) {
-	@font-face {
-		font-family: '#{$font-family}';
-		font-weight: #{$weight};
-		font-style: '#{$style}';
+  @font-face {
+    font-family: '#{$font-family}';
+    font-weight: #{$weight};
+    font-style: '#{$style}';
 
-		src: url('#{$url}.eot');
-		src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
-		url('#{$url}.woff') format('woff'),
-		url('#{$url}.ttf') format('truetype');
+    src: url('#{$url}.eot');
+    src: url('#{$url}.eot?#iefix') format('embedded-opentype'), url('#{$url}.woff') format('woff'),
+      url('#{$url}.ttf') format('truetype');
+  }
+}
+@mixin adaptive-font($pcSize, $mobSize, $maxWidth: 1760) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+  @media (max-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+  }
+  @media (min-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+  }
+}
 
-	}
+@function adaptive-size-width($elementSize, $displaySize: 1920, $value: vw) {
+  $result: ($elementSize / $displaySize) * 100;
+  @return $result + $value;
 }
 
 // Function for converting a px based font-size to rem.
 @function rem($size) {
-	$remSize: $size / 14px;
-	@return #{$remSize}rem;
+  $remSize: $size / 14px;
+  @return #{$remSize}rem;
 }
 
 @mixin toh($max_height) {
-	@media screen and (max-height: $max_height) {
-		@content;
-	}
+  @media screen and (max-height: $max_height) {
+    @content;
+  }
 }
-
 
 @function max($numbers...) {
-
-	@return m#{a}x(#{$numbers})
+  @return m#{a}x(#{$numbers});
 }
-
-;
 
 @function min($numbers...) {
-
-	@return m#{i}n(#{$numbers})
+  @return m#{i}n(#{$numbers});
 }
-
-;
-
 
 $full-width: 1200;
 $work-width: 80;
 $screen-height: 720;
 
 @function vmax($pixels, $context: $full-width) {
-	@return #{($pixels/$context)* 100}vmax
+  @return #{($pixels/$context) * 100}vmax;
 }
-;
-
 @function vw($pixels, $context: $full-width) {
-	@return  #{($pixels/$context)* 100}vw
+  @return #{($pixels/$context) * 100}vw;
 }
 
 @function lh($lh, $fz) {
-	@return #{($lh/$fz)}em
+  @return #{($lh/$fz)}em;
 }

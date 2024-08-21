@@ -48,7 +48,7 @@ cardsContainer.addEventListener('click', e => {
 });
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 600) {
+  if (window.innerWidth > 780) {
     document.querySelectorAll('.loyalty-item__active').forEach(card => {
       card.click();
     });
